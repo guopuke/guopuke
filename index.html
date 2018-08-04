@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="http://guopuke.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="posts">
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/byte-bit/">Byte bit</a>
+  </h1>
+  <span class="post-date">Tue, Jun 26, 2018</span>
+  bit 就是位，也叫比特位，是计算机表示数据最小的单位
+byte 就是字节
+1个字符 = 2 字节
+1KB = 1024B
+「字节」就是 Byte，也就是 B
+「位」就是 bit 也是 b
+转换关系如下：1KB = 1024B
+1B= 8b
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/icmp-and-ping/">ICMP and ping</a>
+  </h1>
+  <span class="post-date">Fri, Jun 15, 2018</span>
+   ICMP全称Internet Control Message Protocol，就是互联网控制报文协议，ping就 是基于 ICMP 协议工作的。
+查询报文类型 查询报文是以一种主动请求的方式，并且获得主动应答的 ICMP 协议，ping 就是查询报文的一种。
+差错报文类型  终点不可达 (网络、主机、协议、端口&hellip;) 源站抑制(限流) 时间超时 路由重定向   
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/systemd-%E5%AE%9A%E6%97%B6%E5%99%A8%E6%95%99%E7%A8%8B/">Systemd 定时器教程</a>
+  </h1>
+  <span class="post-date">Sat, Jun 9, 2018</span>
+  作者： 阮一峰
+日期： 2018年3月30日
+Systemd 作为 Linux 的系统启动器，功能强大。
+本文通过一个简单例子，介绍 Systemd 如何设置定时任务。这不仅实用，而且可以作为 Systemd 的上手教程。
+一、定时任务 所谓定时任务，就是未来的某个或多个时点，预定要执行的任务，比如每五分钟收一次邮件、每天半夜两点分析一下日志等等。
+Linux 系统通常都使用 cron 设置定时任务，但是 Systemd 也有这个功能，而且优点显著。
+  自动生成日志，配合 Systemd 的日志工具，很方便除错 可以设置内存和 CPU 的使用额度，比如最多使用50%的 CPU 任务可以拆分，依赖其他 Systemd 单元，完成非常复杂的任务   下面，我就来演示一个 Systemd 定时任务：每小时发送一封电子邮件。
+二、邮件脚本 先写一个发邮件的脚本mail.sh。
+ #!/usr/bin/env bash echo &quot;This is the body&quot; | /usr/bin/mail -s &quot;Subject&quot; someone@example.com   上面代码的someone@example.com，请替换成你的邮箱地址。
+然后，执行这个脚本。
+ $ bash mail.sh   执行后，你应该就会收到一封邮件，标题为Subject。
+如果你的 Linux 系统不能发邮件，建议安装 ssmtp 或者 msmtp。另外，mail命令的用法，可以参考这里。
+  
+  <div class="read-more-link">
+    <a href="/post/systemd-%E5%AE%9A%E6%97%B6%E5%99%A8%E6%95%99%E7%A8%8B/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">微信小程序发送模板消息</a>
+  </h1>
+  <span class="post-date">Wed, Mar 14, 2018</span>
+  前提要求  建议首先了解下官方文档 已添加模板库(模板ID) 已获取用户的 open_id, formId || prepay_id  添加模板库  通过模版消息管理接口获取模版ID 在微信公众平台手动配置获取模版ID(如下图)，此处手动获取的时候会遇到一个坑，建议使用上面的模版消息管理接口获取，当时开发时在详情里复制的模板ID其实是被HTML页面元素截断了，导致调试了很久(右键查看元素手动复制也是个办法)。  获取formId 在小程序页面 &lt;form/&gt; 组件，属性report-submit为true时，可以声明为需发模板消息，此时点击按钮提交表单可以获取 formId，用于发送模板消息，此处只有在真机调试的时候提交才会有，使用开发工具的时候不会产生 formId，会得到提示 the formId is a mock one。或者当用户完成支付行为，可以获取prepay_id 用于发送模板消息。
+小程序代码
+ xx.wxml
+ &lt;form bindsubmit=&quot;formSubmit&quot; report-submit='true'&gt; &lt;view class=&quot;btn-area&quot;&gt; &lt;button formType=&quot;submit&quot;&gt;Submit&lt;/button&gt; &lt;/view&gt; &lt;/form&gt;   xx.js
+ formSubmit: function (e) { console.log(e.detail.formId) // Your show~ }  调用微信发送模板消息接口 POST 请求下面的地址
+https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=ACCESS_TOKEN  { // 用户的OPENID &quot;touser&quot;: &quot;OPENID&quot;, // 模板ID &quot;template_id&quot;: &quot;TEMPLATE_ID&quot;, // 链接跳转地址(小程序路由) &quot;page&quot;: &quot;page/index&quot;, // 调教表单生成 formId &quot;form_id&quot;: &quot;FORMID&quot;, // 模板消息内容 &quot;data&quot;: { // 键名对应下图的关键词 &quot;keyword1&quot;: { // 内容 &quot;value&quot;: &quot;智能XXX&quot;, // 字体颜色 &quot;color&quot;: &quot;#173177&quot; }, &quot;keyword2&quot;: { &quot;value&quot;: &quot;2015年01月05日 12:30&quot;, &quot;color&quot;: &quot;#173177&quot; } } }  如果项目是使用PHP开发的项目，且很多功能依赖微信开发，建议使用overtrue大神开发的EasyWeChat
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/docker-compose%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0php%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">Docker-compose搭建本地PHP运行环境</a>
+  </h1>
+  <span class="post-date">Thu, Mar 8, 2018</span>
+  非常感谢 laradock是简化定制之后的产物，方便学习使用。
+镜像  数据库引擎  Mysql Mongo  Mysql 管理工具  phpmyadmin  缓存引擎:  Redis Memcached  搜索引擎  elasticsearch  PHP 服务器  Nginx  PHP 进程管理  php-worker  PHP 编译工具  php-fpm (php7.1)  工具:  Workspace (PHP7-CLI, SOAP, xDebug, Composer, Git, Node, YARN, Gulp, SQLite, Vim, Nano, cURL&hellip;) &gt;如果你找不到你需要的软件，构建它然后把它添加到这个列表。   安装 克隆 DevDock 仓库:
+在你系统的任意位置（建议在你的工作目录）：
+git clone https://github.com/RystLee/DevDock.git DNMP cd DNMP cp .
+  
+  <div class="read-more-link">
+    <a href="/post/docker-compose%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0php%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Mysql常用命令</a>
+  </h1>
+  <span class="post-date">Wed, Nov 22, 2017</span>
+  表结构-数据导出 mysqldump -uroot -piMariadb168 &ndash;databases aquarium &ndash;tables aq_region aq_chip &gt;/tmp/db1.sql;
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/web%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84/">Web系统并发设计思路</a>
+  </h1>
+  <span class="post-date">Fri, Oct 6, 2017</span>
+  转载: Web系统大规模并发——电商秒杀与抢购
+电商的秒杀和抢购，对我们来说，都不是一个陌生的东西。然而，从技术的角度来说，这对于Web系统是一个巨大的考验。当一个Web系统，在一秒钟内收到数以万计甚至更多请求时，系统的优化和稳定至关重要。这次我们会关注秒杀和抢购的技术实现和优化，同时，从技术层面揭开，为什么我们总是不容易抢到火车票的原因？
+一、大规模并发带来的挑战 在过去的工作中，我曾经面对过5w每秒的高并发秒杀功能，在这个过程中，整个Web系统遇到了很多的问题和挑战。如果Web系统不做针对性的优化，会轻而易举地陷入到异常状态。我们现在一起来讨论下，优化的思路和方法哈。
+1. 请求接口的合理设计 一个秒杀或者抢购页面，通常分为2个部分，一个是静态的HTML等内容，另一个就是参与秒杀的Web后台请求接口。
+通常静态HTML等内容，是通过CDN的部署，一般压力不大，核心瓶颈实际上在后台请求接口上。这个后端接口，必须能够支持高并发请求，同时，非常重要的一点，必须尽可能“快”，在最短的时间里返回用户的请求结果。为了实现尽可能快这一点，接口的后端存储使用内存级别的操作会更好一点。仍然直接面向MySQL之类的存储是不合适的，如果有这种复杂业务的需求，都建议采用异步写入。
+当然，也有一些秒杀和抢购采用“滞后反馈”，就是说秒杀当下不知道结果，一段时间后才可以从页面中看到用户是否秒杀成功。但是，这种属于“偷懒”行为，同时给用户的体验也不好，容易被用户认为是“暗箱操作”。
+2. 高并发的挑战：一定要“快” 我们通常衡量一个Web系统的吞吐率的指标是QPS（Query Per Second，每秒处理请求数），解决每秒数万次的高并发场景，这个指标非常关键。举个例子，我们假设处理一个业务请求平均响应时间为100ms，同时，系统内有20台Apache的Web服务器，配置MaxClients为500个（表示Apache的最大连接数目）。
+那么，我们的Web系统的理论峰值QPS为（理想化的计算方式）：
+20*500&frasl;0.1 = 100000 （10万QPS）
+咦？我们的系统似乎很强大，1秒钟可以处理完10万的请求，5w/s的秒杀似乎是“纸老虎”哈。实际情况，当然没有这么理想。在高并发的实际场景下，机器都处于高负载的状态，在这个时候平均响应时间会被大大增加。
+就Web服务器而言，Apache打开了越多的连接进程，CPU需要处理的上下文切换也越多，额外增加了CPU的消耗，然后就直接导致平均响应时间增加。因此上述的MaxClient数目，要根据CPU、内存等硬件因素综合考虑，绝对不是越多越好。可以通过Apache自带的abench来测试一下，取一个合适的值。然后，我们选择内存操作级别的存储的Redis，在高并发的状态下，存储的响应时间至关重要。网络带宽虽然也是一个因素，不过，这种请求数据包一般比较小，一般很少成为请求的瓶颈。负载均衡成为系统瓶颈的情况比较少，在这里不做讨论哈。
+那么问题来了，假设我们的系统，在5w/s的高并发状态下，平均响应时间从100ms变为250ms（实际情况，甚至更多）：
+20*500&frasl;0.25 = 40000 （4万QPS）
+于是，我们的系统剩下了4w的QPS，面对5w每秒的请求，中间相差了1w。
+然后，这才是真正的恶梦开始。举个例子，高速路口，1秒钟来5部车，每秒通过5部车，高速路口运作正常。突然，这个路口1秒钟只能通过4部车，车流量仍然依旧，结果必定出现大塞车。（5条车道忽然变成4条车道的感觉）
+同理，某一个秒内，20*500个可用连接进程都在满负荷工作中，却仍然有1万个新来请求，没有连接进程可用，系统陷入到异常状态也是预期之内。
+其实在正常的非高并发的业务场景中，也有类似的情况出现，某个业务请求接口出现问题，响应时间极慢，将整个Web请求响应时间拉得很长，逐渐将Web服务器的可用连接数占满，其他正常的业务请求，无连接进程可用。
+更可怕的问题是，是用户的行为特点，系统越是不可用，用户的点击越频繁，恶性循环最终导致“雪崩”（其中一台Web机器挂了，导致流量分散到其他正常工作的机器上，再导致正常的机器也挂，然后恶性循环），将整个Web系统拖垮。
+3. 重启与过载保护 如果系统发生“雪崩”，贸然重启服务，是无法解决问题的。最常见的现象是，启动起来后，立刻挂掉。这个时候，最好在入口层将流量拒绝，然后再将重启。如果是redis/memcache这种服务也挂了，重启的时候需要注意“预热”，并且很可能需要比较长的时间。
+秒杀和抢购的场景，流量往往是超乎我们系统的准备和想象的。这个时候，过载保护是必要的。如果检测到系统满负载状态，拒绝请求也是一种保护措施。在前端设置过滤是最简单的方式，但是，这种做法是被用户“千夫所指”的行为。更合适一点的是，将过载保护设置在CGI入口层，快速将客户的直接请求返回。
+二、作弊的手段：进攻与防守 秒杀和抢购收到了“海量”的请求，实际上里面的水分是很大的。不少用户，为了“抢“到商品，会使用“刷票工具”等类型的辅助工具，帮助他们发送尽可能多的请求到服务器。还有一部分高级用户，制作强大的自动请求脚本。这种做法的理由也很简单，就是在参与秒杀和抢购的请求中，自己的请求数目占比越多，成功的概率越高。
+这些都是属于“作弊的手段”，不过，有“进攻”就有“防守”，这是一场没有硝烟的战斗哈。
+1. 同一个账号，一次性发出多个请求 部分用户通过浏览器的插件或者其他工具，在秒杀开始的时间里，以自己的账号，一次发送上百甚至更多的请求。实际上，这样的用户破坏了秒杀和抢购的公平性。
+这种请求在某些没有做数据安全处理的系统里，也可能造成另外一种破坏，导致某些判断条件被绕过。例如一个简单的领取逻辑，先判断用户是否有参与记录，如果没有则领取成功，最后写入到参与记录中。这是个非常简单的逻辑，但是，在高并发的场景下，存在深深的漏洞。多个并发请求通过负载均衡服务器，分配到内网的多台Web服务器，它们首先向存储发送查询请求，然后，在某个请求成功写入参与记录的时间差内，其他的请求获查询到的结果都是“没有参与记录”。这里，就存在逻辑判断被绕过的风险。
+应对方案：
+在程序入口处，一个账号只允许接受1个请求，其他请求过滤。不仅解决了同一个账号，发送N个请求的问题，还保证了后续的逻辑流程的安全。实现方案，可以通过Redis这种内存缓存服务，写入一个标志位（只允许1个请求写成功，结合watch的乐观锁的特性），成功写入的则可以继续参加。
+或者，自己实现一个服务，将同一个账号的请求放入一个队列中，处理完一个，再处理下一个。
+2. 多个账号，一次性发送多个请求 很多公司的账号注册功能，在发展早期几乎是没有限制的，很容易就可以注册很多个账号。因此，也导致了出现了一些特殊的工作室，通过编写自动注册脚本，积累了一大批“僵尸账号”，数量庞大，几万甚至几十万的账号不等，专门做各种刷的行为（这就是微博中的“僵尸粉“的来源）。举个例子，例如微博中有转发抽奖的活动，如果我们使用几万个“僵尸号”去混进去转发，这样就可以大大提升我们中奖的概率。
+这种账号，使用在秒杀和抢购里，也是同一个道理。例如，iPhone官网的抢购，火车票黄牛党。
+应对方案：
+这种场景，可以通过检测指定机器IP请求频率就可以解决，如果发现某个IP请求频率很高，可以给它弹出一个验证码或者直接禁止它的请求：
+ 弹出验证码，最核心的追求，就是分辨出真实用户。因此，大家可能经常发现，网站弹出的验证码，有些是“鬼神乱舞”的样子，有时让我们根本无法看清。他们这样做的原因，其实也是为了让验证码的图片不被轻易识别，因为强大的“自动脚本”可以通过图片识别里面的字符，然后让脚本自动填写验证码。实际上，有一些非常创新的验证码，效果会比较好，例如给你一个简单问题让你回答，或者让你完成某些简单操作（例如百度贴吧的验证码）。 直接禁止IP，实际上是有些粗暴的，因为有些真实用户的网络场景恰好是同一出口IP的，可能会有“误伤“。但是这一个做法简单高效，根据实际场景使用可以获得很好的效果。  3. 多个账号，不同IP发送不同请求 所谓道高一尺，魔高一丈。有进攻，就会有防守，永不休止。这些“工作室”，发现你对单机IP请求频率有控制之后，他们也针对这种场景，想出了他们的“新进攻方案”，就是不断改变IP。
+有同学会好奇，这些随机IP服务怎么来的。有一些是某些机构自己占据一批独立IP，然后做成一个随机代理IP的服务，有偿提供给这些“工作室”使用。还有一些更为黑暗一点的，就是通过木马黑掉普通用户的电脑，这个木马也不破坏用户电脑的正常运作，只做一件事情，就是转发IP包，普通用户的电脑被变成了IP代理出口。通过这种做法，黑客就拿到了大量的独立IP，然后搭建为随机IP服务，就是为了挣钱。
+应对方案：
+说实话，这种场景下的请求，和真实用户的行为，已经基本相同了，想做分辨很困难。再做进一步的限制很容易“误伤“真实用户，这个时候，通常只能通过设置业务门槛高来限制这种请求了，或者通过账号行为的”数据挖掘“来提前清理掉它们。
+僵尸账号也还是有一些共同特征的，例如账号很可能属于同一个号码段甚至是连号的，活跃度不高，等级低，资料不全等等。根据这些特点，适当设置参与门槛，例如限制参与秒杀的账号等级。通过这些业务手段，也是可以过滤掉一些僵尸号。
+4. 火车票的抢购 看到这里，同学们是否明白你为什么抢不到火车票？如果你只是老老实实地去抢票，真的很难。通过多账号的方式，火车票的黄牛将很多车票的名额占据，部分强大的黄牛，在处理验证码方面，更是“技高一筹“。
+高级的黄牛刷票时，在识别验证码的时候使用真实的人，中间搭建一个展示验证码图片的中转软件服务，真人浏览图片并填写下真实验证码，返回给中转软件。对于这种方式，验证码的保护限制作用被废除了，目前也没有很好的解决方案。
+因为火车票是根据身份证实名制的，这里还有一个火车票的转让操作方式。大致的操作方式，是先用买家的身份证开启一个抢票工具，持续发送请求，黄牛账号选择退票，然后黄牛买家成功通过自己的身份证购票成功。当一列车厢没有票了的时候，是没有很多人盯着看的，况且黄牛们的抢票工具也很强大，即使让我们看见有退票，我们也不一定能抢得过他们哈。
+最终，黄牛顺利将火车票转移到买家的身份证下。
+  
+  <div class="read-more-link">
+    <a href="/post/web%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%8F%91%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/yii-%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/">Yii-自动加载</a>
+  </h1>
+  <span class="post-date">Thu, Sep 28, 2017</span>
+  入口脚本(web/index.php) Yii2的advanced版本默认是有2个入口的（frontend、backend），但其实只是在使用同一个框架及公共配置让2个server分离工作进行构建网站、API等。
+Web服务器每将一个请求转发过来的时候，始终只会进一个入口文件，那就是index.php了，这个文件会进行应用的初始化配置、解析路由、处理请求、连接SQL数据库。
+说了这么多，来看看入口文件内容
+&lt;?php // 定义是否处于DEBUG模式(框架初始化时 ./init 选择运行环境会影响此处代码是否会产生) defined('YII_DEBUG') or define('YII_DEBUG', true); defined('YII_ENV') or define('YII_ENV', 'dev'); // 载入composer管理依赖包,此处实现了第三方的composer包可以直接调用(因为composer有个autoload.php文件,已经处理好载入类文件的问题) require(__DIR__ . '/../../vendor/autoload.php'); // 载入基础类文件(核心,没有它就不能算是框架了) require(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php'); // 载入公共的全局配置(各应用之间的目录别名就定义在此) require(__DIR__ . '/../../common/config/bootstrap.php'); // 本server的相关全局配置 require(__DIR__ . '/../config/bootstrap.php'); // 合并所有配置项参数,并调用 Application-&gt;run() $config = yii\helpers\ArrayHelper::merge( require(__DIR__ . '/../../common/config/main.php'), require(__DIR__ . '/../../common/config/main-local.php'), require(__DIR__ . '/../config/main.php'), require(__DIR__ . '/../config/main-local.php') ); (new yii\web\Application($config))-&gt;run();  核心基础类(Yii.php) 说vendor/yiisoft/yii2/Yii.php这个类是核心类呢，也不大准确，因为它其实只是一个子类，真正厉害的是它所继承的BaseYii.php，先看一下文件内容：
+// 此处还不能实现自动加载类,哈哈,所以只好简单粗暴require进来了,万变不离其宗 require(__DIR__ . '/BaseYii.php'); class Yii extends \yii\BaseYii { } spl_autoload_register(['Yii', 'autoload'], true, true); Yii::$classMap = require(__DIR__ .
+  
+  <div class="read-more-link">
+    <a href="/post/yii-%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/">Yii-事件篇</a>
+  </h1>
+  <span class="post-date">Thu, Sep 21, 2017</span>
+  最近看到一篇 越过长城，走向世界！中国第一封 Email 发出 30 年，感慨这些先驱者们的同时，内心使命感也涌涌而上。之前也没配置过相关邮件服务，遂打算以此文来纪录学习一番。
+那么如何让用户注册账号时触发一个发送邮件的事件呢? 现在很多框架都继承了邮件的功能，遍地的轮子啊！（本篇使用Yii2框架来了解事件如何定义及如何触发并实现发送邮件功能）
+ 配置参数
+ 发送邮件的组件类
+ 通过Ioc容器来传递事件参数
+ 业务中触发发送邮件事件
+  ​
+​
+配置参数 在 common/config/main-local.php 文件中已有 mailer的一个简单配置，添加服务端邮件信息即可，配置如下：
+'mailer' =&gt; [ 'class' =&gt; 'yii\swiftmailer\Mailer', 'viewPath' =&gt; '@common/mail', // false发送邮件，true只是生成邮件在runtime文件夹下，不发邮件 'useFileTransport' =&gt; false, 'transport' =&gt; [ 'class' =&gt; 'Swift_SmtpTransport', // 163,gmail等邮箱注意更改 'host' =&gt; 'smtp.qq.com', // 登录用户名 'username' =&gt; 'surprisepeas@qq.com', // 需要注意的是:如果是QQ邮箱,需要去邮箱设置里获取授权码 'password' =&gt; 'qnrrfovxvsvmgade', 'port' =&gt; '25', // 加密算法 'encryption' =&gt; 'tls', ], 'messageConfig' =&gt; [ 'charset' =&gt; 'UTF-8', // 发送者名称抬头 必须与username配置一致 'from' =&gt; ['surprisepeas@qq.
+  
+  <div class="read-more-link">
+    <a href="/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/yii-%E5%B1%9E%E6%80%A7%E7%AF%87/">Yii-属性篇</a>
+  </h1>
+  <span class="post-date">Sat, Sep 16, 2017</span>
+  属性用于表征类的状态，从访问的形式上看，属性与成员变量没有区别。
+成员变量是就类的结构构成而言的概念，而属性是就类的功能逻辑而言的概念，两者紧密联系又相互区别。
+成员变量和属性的区别与联系在于：
+ 成员变量是一个“内”概念，反映的是类的结构构成。属性是一个“外”概念，反映的是类的逻辑意义。
+ 成员变量没有读写权限控制，而属性可以指定为只读或只写，或可读可写。
+ 成员变量不对读出作任何后处理，不对写入作任何预处理，而属性则可以。
+ public成员变量可以视为一个可读可写、没有任何预处理或后处理的属性。 而private成员变量由于外部不可见，与属性“外”的特性不相符，所以不能视为属性。
+ 虽然大多数情况下，属性会由某个或某些成员变量来表示，但属性与成员变量没有必然的对应关系， 比如与非门的 output 属性，就没有一个所谓的 $output 成员变量与之对应。
+  Yii通过 yii\base\Object 提供了属性的支持，很多核心基类都继承至它， yii\base\Object 通过PHP的魔术方法 __get() __set() 进行工作。
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/php%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/">PHP魔术方法、依赖注入、控制反转容器</a>
+  </h1>
+  <span class="post-date">Fri, Sep 15, 2017</span>
+  依赖注入 “注入”，就是把一个实例传递到另一个实例的内部。
+控制反转容器（Ioc Container） 如果存在如下这样复杂的依赖关系，该如何解决呢？
+$a = new A(new B(new D(new F)), new C(new E()));  IoC容器（控制反转）就是为了帮助我们解决因复杂的依赖注入而产生混乱的解决方案。
+IoC容器需要满足2个最基本的功能：
+ 存储定义的类 实例化类   大概实现代码如下：
+ Class Container { // 保存定义的类 private $_definitions; // 存储到$_definitions属性中, (类名,创建类) public function set($class, $definition) { $this-&gt;_definitions[$class] = $definition; } // 查找$_definitions属性中的类 public function get($class, $params = []) { if () { $definition = $this-&gt;_definitions[$class]; // 调用此类下的定义 return call_user_func($definition, $params); }else { echo 'Must callable';die; } } }  例1.
+  
+  <div class="read-more-link">
+    <a href="/post/php%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/">物流信息API对接</a>
+  </h1>
+  <span class="post-date">Wed, Sep 6, 2017</span>
+  ​ 项目刚好涉及一小块儿订单部分，需要一个第三方的快递物流信息接口API做一个物流轨迹的跟踪。国内的快递100、快递鸟、快递网、聚合数据，国际快递的话使用 Trackingmore也不错。个人综合比较考虑一下，决定使用 快递鸟 物流数据平台。
+注册 不方便的一个地方就是需要手机号收取验证码进行注册， 如果企业注册的话，可能会稍微麻烦一点。
+提交申请后，按照提示填写企业、个人信息就行，会要求上传证件信息（无需等待审核）。
+注册完成以后，到了用户管理界面，会有一个产品服务的选择购买，免费版3000次/天的足够非商城项目来使用了。购买完成后，如下展示的是可用的产品服务。
+物流跟踪 物流追踪API提供物流订单监控服务，用户将订单内容订阅到快递鸟后，快递鸟对订单进行实时监控，当物流轨迹有更新时，实时获取数据，对数据进行格式化，计算运单预计到达时间、全流程的物流状态、当前所在城市等数据后，推送给用户。监控直到订单签收后结束。
+参照 物流跟踪API文档
+Yii2 - Code 因为用的是Yii2框架，根据官方的demo稍作修改，如下：
+ 文件路径 common/config/params-local.php增加以下配置参数  // 快递鸟物流API接口参数 'LOGISTICS' =&gt; [ 'EBusinessID' =&gt; '会员中心页 用户ID', 'AppKey' =&gt; '会员中心页 API key', 'ReqURL' =&gt; 'http://api.kdniao.cc/api/dist', // 快递鸟物流跟踪请求地址 //'ReqURL' =&gt; 'http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx', // 即时查询物流信息请求地址 ],   后台填写好订单时，需要实现一个订阅快递鸟物流跟踪的方法，文件路径 backend/controllers/KdniaoController.php  public function actionSubscribe($requestData) { // 调试用,调用此方法时需传递以下3个参数的值 $requestData = [ 'OrderCode' =&gt; '123123123123', // 商户订单号 'ShipperCode' =&gt; 'SF', // 物流渠道商名称 'LogisticCode' =&gt; '123455672341', // 物流订单号 ]; $requestData = json_encode($requestData); $kdniao_params = Yii::$app-&gt;params[ 'LOGISTICS' ]; ksort($kdniao_params, SORT_STRING); list($AppKey, $EBusinessID, $ReqURL) = array_values($kdniao_params); $kdniao = new KdniaoLogistic($AppKey, $EBusinessID, $ReqURL); return $kdniao-&gt;getOrderTracesByJson($requestData); }   SDK文件路径 common/sdk/KdniaoLogistic  &lt;?
+  
+  <div class="read-more-link">
+    <a href="/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/chrome-cvim-%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%80%9F%E6%9F%A5%E8%A1%A8/">Chrome cVim 快捷键速查表</a>
+  </h1>
+  <span class="post-date">Thu, Aug 24, 2017</span>
+  最近在各大论坛有意多关注了些Chrome推荐的插件，看见一款新玩意推荐 cVim 说比Vimium还要强大，自带快捷键不说还集成了搜索、查找、viusal 模式、像素级平滑滚动、自定义键映射、更顺手标签页快捷键。
+GitHub地址 https://github.com/1995eaton/chromium-vim
+Chrome Extension https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh
+根据官方的介绍，它和Vimium、ViChrome有几个明显的特征优势：
+ 支持自定义搜索引擎 正则表达式 支持 Visual Mode 命令支持tab补全 自定义键映射  键映射    页面滚动  Mapping name     j, s 向下滚动 scrollDown   k, w 向上滑动 scrollUp   h 向左滚动 scrollLeft   l 向右滚动 scrollRight   d 滚动一半页面 scrollPageDown   unmapped 滚动全页下来 scrollFullPageDown   u, e 滚动一半页面 scrollPageUp   unmapped 滚动全页面 scrollFullPageUp   gg 滚动到页面顶部 scrollToTop   G 滚动到页面的底部 scrollToBottom   0 滚动到页面的左边 scrollToLeft   $ 滚动到页面的右侧 scrollToRight   # 将滚动焦点重置为主页面 resetScrollFocus   gi 转到第一个输入框 goToInput   gI 转到最后一个聚焦的输入框 gi goToLastInput   zz 中心页到当前搜索匹配（中） centerMatchH   zt 中心页到当前搜索匹配（上） centerMatchT   zb 中心页面到当前搜索匹配（底部） centerMatchB   连接提示     f 打开当前页面中的链接 createHint   F 在新标签页中打开链接 createTabbedHint   unmapped 在新标签页中打开链接（活动） createActiveTabbedHint   W 在新窗口中打开链接 createHintWindow   A 重复最后提示命令 openLastHint   q 触发悬停事件 createHoverHint   Q 触发不起眼的事件 createUnhoverHint   mf 打开多个链接 createMultiHint   unmapped 使用外部编辑器编辑文本 createEditHint   unmapped 调用带有链接的代码块作为第一个参数 createScriptHint(&lt;FUNCTION_NAME&gt;)   unmapped 在新标签页中打开图像 fullImageHint   mr 反向图像搜索多个链接 multiReverseImage   my 打开多个链接（打开链接P列表） multiYankUrl   gy 从链接复制URL到剪贴板 yankUrl   gr 反向图像搜索（谷歌图像） reverseImage   ; 改变链接提示的重点    快速标记马克     M&lt;*&gt; 创建quickmark &lt;*&gt; addQuickMark   go&lt;*&gt; 在当前标签中打开quickmark &lt;*&gt; openQuickMark   gn&lt;*&gt; 在新标签页中打开quickmark &lt;*&gt; openQuickMarkTabbed   gw&lt;*&gt; 在新窗口中打开quickmark &lt;*&gt; openQuickMarkWindowed   杂项     a 简写别名 &ldquo;:tabnew google &ldquo; (以google搜索打开新页面) :tabnew google   .
+  
+  <div class="read-more-link">
+    <a href="/post/chrome-cvim-%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%80%9F%E6%9F%A5%E8%A1%A8/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/">微信小程序支付功能</a>
+  </h1>
+  <span class="post-date">Thu, Aug 17, 2017</span>
+  大致流程 实现微信支付主要分为以下两步：
+​ 一、服务端携带参数首先向微信支付服务台生成预支付交易单获得prepay_id等参数并返回给客户端。
+​ 二、前端获得服务端返回的参数后，携带参数并调用小程序内API方法 wx.requestPayment(OBJECT)
+大致流程图：
+配置前提  在小程序管理界面，点击 微信支付 菜单栏进行申请开通相关操作，获取权限及商户ID（已进行微信认证的账号才会显示）。进行申请时需要缴纳费用并会受到一份包含商户信息、证书的邮件（创建、查询订单不需要用到证书，本文不做介绍）。 在 设置 - 开发设置 里获取AppID、小程序密钥   Code Params
+ 'open.pay' =&gt; [ // 小程序支付 'lite' =&gt; [ 'appid' =&gt; '*************', // 小程序ID 'mch_id' =&gt; '*************', // 商户ID 'key' =&gt; '*************', // 密钥 'notify_url' =&gt; '*************', // 回调地址 ], ],  业务代码流程 (Yii2框架)  客户端请求服务端生成订单，服务端请求微信生成统一下单参数返给前端，代码如下：
+ $mch_id = Yii::$app-&gt;params[ 'open.pay' ][ 'lite' ][ 'mch_id' ]; $app_id = Yii::$app-&gt;params[ 'open.
+  
+  <div class="read-more-link">
+    <a href="/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/php%E6%A0%B9%E6%8D%AE%E7%89%B9%E5%AE%9A%E5%AD%97%E6%AE%B5%E8%BF%9B%E8%A1%8C%E5%88%86%E7%BB%84/">PHP根据特定字段进行分组</a>
+  </h1>
+  <span class="post-date">Fri, Jul 28, 2017</span>
+  如果你的数据是这样:
+需要转换为如下格式
+添加此函数可以进行转为
+public function array_group_by($arr, $key) { $grouped = []; foreach ($arr as $value) { $grouped[$value[$key]][] = $value; } // 递归重组嵌套数组 if (func_num_args() &gt; 2) { $args = func_get_args(); foreach ($grouped as $key =&gt; $value) { $parms = array_merge([$value], array_slice($args, 2, func_num_args())); $grouped[$key] = call_user_func_array('array_group_by', $parms); } } return $grouped; }  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/jwtauth%E8%BF%90%E7%94%A8%E5%88%B0laravel5/">JWTAuth运用到Laravel5</a>
+  </h1>
+  <span class="post-date">Fri, Jul 14, 2017</span>
+  JSON Web Token Authentication for Laravel &amp; Lumen ​ 现在项目基本全是前后端分离的开发模式，特别是在使用Angular这种前端框架来构建单页面应用程序时会发现配合 angular-locker 实现存储令牌等方面更加得心应手，So 此次项目决定用jwt-auth建立一套API规范来练练手。
+​ jwt-auth使用JSON Web令牌（spec）在Laravel中提供了一种简单的身份验证手段，是一个非常轻巧的规范。这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。
+​
+JWT定义及其组成 一个JWT实际上就是一个字符串，它由三部分组成，头部、载荷与签名。
+载荷（Payload） 我们先将用户认证的操作描述成一个JSON对象。其中添加了一些其他的信息，帮助今后收到这个JWT的服务器理解这个JWT。
+{ &quot;sub&quot;: &quot;1&quot;, &quot;iss&quot;: &quot;http://localhost:8000/auth/login&quot;, &quot;iat&quot;: 1451888119, &quot;exp&quot;: 1454516119, &quot;nbf&quot;: 1451888119, &quot;jti&quot;: &quot;37c107e4609ddbcc9c096ea5ee76c667&quot; }  这里面的6个字段都是由JWT的标准所定义的。
+ sub: 该JWT所面向的用户 iss: 该JWT的签发者 iat(issued at): 在什么时候签发的token exp(expires): token什么时候过期 nbf(not before)：token在此时间之前不能被接收处理 jti：JWT ID为web token提供唯一标识  详细定义
+JWT的载荷形式是以base64编码得到的,base64编码上面的JSON可得到如下:
+eyJzdWIiOiIxIiwiaXNzIjoiaHR0cDpcL1wvbG9jYWx ob3N0OjgwMDFcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDUxODg4MTE5LCJleHAiOjE0NTQ1MTYxMTksIm5iZiI6MTQ1MTg4OD ExOSwianRpIjoiMzdjMTA3ZTQ2MDlkZGJjYzljMDk2ZWE1ZWU3NmM2NjcifQ  可使用Node.js进行解码翻译出如下格式:
+var base64url = require('base64url') var header = { &quot;from_user&quot;: &quot;B&quot;, &quot;target_user&quot;: &quot;A&quot; } console.
+  
+  <div class="read-more-link">
+    <a href="/post/jwtauth%E8%BF%90%E7%94%A8%E5%88%B0laravel5/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/php7%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/">php7新特性学习</a>
+  </h1>
+  <span class="post-date">Sat, Jul 1, 2017</span>
+  参考PHP官网个人记录学习
+null合并运算符 // 支持链式语法操作,会返回第一个有值的数据 $username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';  
+返回值类型声明 // 返回类型声明指明了函数返回值的类型 function arraysSum(array ...$arrays): array { return array_map(function(array $array): int { return array_sum($array); }, $arrays); } print_r(arraysSum([1,2,3], [4,5,6], [7,8,9])); // 输出结果 Array ( [0] =&gt; 6 [1] =&gt; 15 [2] =&gt; 24 )  太空船操作符（组合比较符） echo &quot;a&quot; &lt;=&gt; &quot;a&quot;; // 0 echo &quot;a&quot; &lt;=&gt; &quot;b&quot;; // -1 echo &quot;b&quot; &lt;=&gt; &quot;a&quot;; // 1 echo 1 &lt;=&gt; 1; // 0 echo 1 &lt;=&gt; 2; // -1 echo 2 &lt;=&gt; 1; // 1  匿名类 通过new class 来实例化一个匿名类，传递参数到匿名类的构造器，也可以扩展（extend）其他类、实现接口（implement interface），这可以用来替代一些“用后即焚”的完整类定义。
+  
+  <div class="read-more-link">
+    <a href="/post/php7%E6%96%B0%E7%89%B9%E6%80%A7%E5%AD%A6%E4%B9%A0/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/redis%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8sentinel/">Redis配置使用守护进程启动sentinel</a>
+  </h1>
+  <span class="post-date">Thu, Jun 29, 2017</span>
+   概述 ​ Redis-Sentinel是Redis官方推荐的高可用性(HA)解决方案，当用Redis做Master-slave的高可用方案时，假如master宕机了，Redis本身(包括它的很多客户端)都没有实现自动进行主备切换，而Redis-sentinel本身也是一个独立运行的进程，它能监控多个master-slave集群，发现master宕机后能进行自懂切换。
+ 不时地监控redis是否按照预期良好地运行; 如果发现某个redis节点运行出现状况，能够通知另外一个进程(例如它的客户端); 能够进行自动切换。当一个master节点不可用时，能够选举出master的多个slave(如果有超过一个slave的话)中的一个来作为新的master,其它的slave节点会将它所追随的master的地址改为被提升为master的slave的新地址。  Sentinel状态持久化 snetinel的状态会被持久化地写入sentinel的配置文件中。每次当收到一个新的配置时，或者新创建一个配置时，配置会被持久化到硬盘中，并带上配置的版本戳。这意味着，可以安全的停止和重启sentinel进程。
+配置 此 .conf 配置文件为HomeBrew默认文件路径
+ vi /usr/local/etc/redis-sentinel.conf
+ // 添加如下配置 daemonize yes //开启守护进程 logfile &quot;/var/log/sentinel_log.log&quot; //配置日志记录  运行Sentinel sentinel默认监听26379端口，所以运行前必须确定该端口没有被别的进程占用。
+redis-server /path/to/sentinel.conf --sentinel  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/vue%E7%BB%84%E4%BB%B6%E5%BA%93/">Vue常用组件库</a>
+  </h1>
+  <span class="post-date">Fri, Jun 16, 2017</span>
+    element （web UI工具套件） iView （ UI 组件库） vue-multiselect（UI组件库） vue-admin （Vue管理面板框架） vue-waterfall（瀑布流布局） vueify（范围化的CSS和组件热重新加载对Vue.js组件进行Browserify变换） vue-threejs （ 用于Three.js和Vue绑定） vue-3d-model （一个展示三维模型的Vue组件） vue-fuse （模糊搜索库） vue-accordion（手风琴菜单组件） vue-js-popover（气泡弹窗） vue-awesome （icons组件） vue-easy-slider（滑块轮播组件） vue-image-lightbox（图片浮层） vue-twentytwenty（图片比较） vue-img-inputer（图片输入框） vue-core-image-upload（图片裁剪，文件上传） vue-lazyload（图片懒加载） vue-pdf（PDF查看） vue-js-modal（模态框） v-tooltip（提示组件） vue-notifications（气泡提示） nprogress（网页进度条） vue-radial-progress（状态进度条） vue-datasource（表格组件） vue-baidu-map（百度地图继承组件） vue-aplayer（音乐播放器） vuejs-sound-player（视频播放器） vuejs-datepicker（轻量日期选择器） vue-datepicker（日期选择器） V - Distpicker（地区选择器） vue-event-calendar（日历） vue-select（下拉选择、标记组件） Vue.Draggable（拖拽组件） vue-qart（二维码动态生成） vue-js-toggle-button（button开关） vue-form-wizard（步骤指引） vue-pull-refresh（移动端下拉刷新） vue-markdown（Markdown编辑器） vue-social-sharing（社交分享） vue-markdown（Markdown编辑器） vue-social-sharing（社交分享）  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E5%85%A5%E9%97%A8webpack/">入门WebPack</a>
+  </h1>
+  <span class="post-date">Sat, Jun 3, 2017</span>
+  ​ Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等。
+​ 来源: http://www.css88.com/doc/webpack2
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/laravel%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Laravel学习笔记</a>
+  </h1>
+  <span class="post-date">Tue, May 30, 2017</span>
+   Eloquent Model 一对多关联关系  # 建立中间模型  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/laravel%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BAphpstorm/">Laravel语法提示PHPStorm </a>
+  </h1>
+  <span class="post-date">Tue, May 30, 2017</span>
+  添加 composer 依赖包 在 composer.json 文件里添加依赖包信息
+ &ldquo;barryvdh/laravel-ide-helper&rdquo;:&ldquo;dev-master&rdquo;
+&ldquo;php artisan ide-helper:generate&rdquo;
+ &quot;require&quot;: { // other composer ... &quot;barryvdh/laravel-ide-helper&quot;:&quot;dev-master&quot; } &quot;scripts&quot;: { &quot;post-update-cmd&quot;: [ // other cmd.. // 以后执行 composer update 的时候会自动执行此扩展包的任务 &quot;php artisan ide-helper:generate&quot; ] },  添加service provider 服务 在你的Laravel项目 config/app.php 于 providers 添加如下代码注册为服务提供者，使其在每个环境下都加载进来：
+Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,  保存退出，执行 composer update 下载依赖包并会自动执行扩展包任务
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/swoole-%E5%AE%89%E8%A3%85%E9%85%8D%E5%90%88-mongodb%E5%AE%9E%E7%8E%B0-pc-%E5%90%8E%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD/">Swoole 实现消息发送功能</a>
+  </h1>
+  <span class="post-date">Mon, May 22, 2017</span>
+  导语  Swoole 是 PHP 的一个扩展，使用纯C语言编写，Swoole底层内置了异步非阻塞、多线程的网络IO服务器。PHP程序员仅需处理事件回调即可，无需关心底层。 官网提供了PHP语言的异步多线程服务器，异步TCP/UDP网络客户端，异步MySQL，异步Redis，数据库连接池，AsyncTask，消息队列，毫秒定时器，异步文件读写，异步DNS查询。 Swoole内置了Http/WebSocket服务器端/客户端、Http2.0服务器端。  安装Swoole  下载地址：Downloads
+ 解包，进入swoole-src 目录执行
+  ~ ᐅ phpize ~ ᐅ ./configure ~ ᐅ make ~ ᐅ sudo make install   打开 php.ini 文件添加扩展（具体根据自己使用的 PHP 路径）：   vi /usr/local/etc/php/7.0/php.ini
+ extension=swoole.so   重启 PHP-FPM   sudo /usr/local/Cellar/php70/7.0.18_10/sbin/php70-fpm restart
+  查看Swoole 扩展是否已安装成功   php -m
+ ​
+运行 Server  创建一个 server.php 文件，用来启动 Swoole 的服务  &lt;?
+  
+  <div class="read-more-link">
+    <a href="/post/swoole-%E5%AE%89%E8%A3%85%E9%85%8D%E5%90%88-mongodb%E5%AE%9E%E7%8E%B0-pc-%E5%90%8E%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/mongodb-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">Mongodb 安装使用</a>
+  </h1>
+  <span class="post-date">Mon, May 22, 2017</span>
+  Mac 环境
+安装Mongodb brew install mongodb  安装完以后可以看见有很明显的提示:
+brew services start mongodb Or, if you don't want/need a background service you can just run: mongod --config /usr/local/etc/mongod.conf  为了方便使用, 将其设置为全局变量
+// 在 ~/.bash_profile 添加PATH路径信息 ➜ ~ sudo vi ~/.bash_profile export PATH=&quot;/usr/local/Cellar/mongodb/3.4.3/bin:$PATH&quot;  启动 mongodb sudo mongod --dbpath=/usr/local/var/mongodb  启动成功后末尾会有如下信息
+2017-05-22T23:18:24.487+0800 I FTDC [initandlisten] Initializing full-time diagnostic data capture with directory '/usr/local/var/mongodb/diagnostic.data' 2017-05-22T23:18:24.489+0800 I NETWORK [thread1] waiting for connections on port 27017  说明已经启动成功了， 如果不成功，可能就是数据库路径不正确，仔细看一下提示。启动的时候可定义数据库路径。
+  
+  <div class="read-more-link">
+    <a href="/post/mongodb-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E8%BD%AC-%E5%9B%BE%E8%A7%A3-%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/">转: 图解 正向代理、反向代理、透明代理</a>
+  </h1>
+  <span class="post-date">Sun, May 21, 2017</span>
+  ​ 原创作品，允许转载，转载时请务必以超链接形式标明文章 原始出处 、作者信息和本声明。否则将追究法律责任。http://z00w00.blog.51cto.com/515114/1031287
+​ 套用古龙武侠小说套路来说，代理服务技术是一门很古老的技术，是在互联网早期出现就使用的技术。一般实现代理技术的方式就是在服务器上安装代理服务软件，让其成为一个代理服务器，从而实现代理技术。常用的代理技术分为正向代理、反向代理和透明代理。本文就是针对这三种代理来讲解一些基本原理和具体的适用范围，便于大家更深入理解代理服务技术。
+一、正向代理(Forward Proxy) ​ 一般情况下，如果没有特别说明，代理技术默认说的是正向代理技术。关于正向代理的概念如下：正向代理(forward)是一个位于客户端【用户A】和原始服务器(origin server)【服务器B】之间的服务器【代理服务器Z】，为了从原始服务器取得内容，用户A向代理服务器Z发送一个请求并指定目标(服务器B)，然后代理服务器Z向服务器B转交请求并将获得的内容返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理。如下图1.1
+​ （图1.1）
+​ 从上面的概念中，我们看出，文中所谓的正向代理就是代理服务器替代访问方【用户A】去访问目标服务器【服务器B】
+​ 这就是正向代理的意义所在。而为什么要用代理服务器去代替访问方【用户A】去访问服务器B呢？这就要从代理服务器使用的意义说起。使用正向代理服务器作用主要有以下几点：
+1、访问本无法访问的服务器B，如下图1.2  ​ （图1.2）
+​ 我们抛除复杂的网络路由情节来看图1.2，假设图中路由器从左到右命名为R1,R2假设最初用户A要访问服务器B需要经过R1和R2路由器这样一个路由节点，如果路由器R1或者路由器R2发生故障，那么就无法访问服务器B了。但是如果用户A让代理服务器Z去代替自己访问服务器B，由于代理服务器Z没有在路由器R1或R2节点中，而是通过其它的路由节点访问服务器B，那么用户A就可以得到服务器B的数据了。现实中的例子就是“翻墙”。不过自从VPN技术被广泛应用外，“翻墙”不但使用了传统的正向代理技术，有的还使用了VPN技术。
+2、加速访问服务器B ​ 这种说法目前不像以前那么流行了，主要是带宽流量的飞速发展。早期的正向代理中，很多人使用正向代理就是提速。还是如图1.2假设用户A到服务器B，经过R1路由器和R2路由器，而R1到R2路由器的链路是一个低带宽链路。而用户A到代理服务器Z，从代理服务器Z到服务器B都是高带宽链路。那么很显然就可以加速访问服务器B了。
+3、Cache作用 ​ Cache（缓存）技术和代理服务技术是紧密联系的（不光是正向代理，反向代理也使用了Cache（缓存）技术。还如上图所示，如果在用户A访问服务器B某数据J之前，已经有人通过代理服务器Z访问过服务器B上得数据J，那么代理服务器Z会把数据J保存一段时间，如果有人正好取该数据J，那么代理服务器Z不再访问服务器B，而把缓存的数据J直接发给用户A。这一技术在Cache中术语就叫Cache命中。如果有更多的像用户A的用户来访问代理服务器Z，那么这些用户都可以直接从代理服务器Z中取得数据J，而不用千里迢迢的去服务器B下载数据了。
+4、客户端访问授权 ​ 这方面的内容现今使用的还是比较多的，例如一些公司采用ISA SERVER做为正向代理服务器来授权用户是否有权限访问互联网，挼下图1.3​ （图1.3）
+​ 图1.3防火墙作为网关，用来过滤外网对其的访问。假设用户A和用户B都设置了代理服务器，用户A允许访问互联网，而用户B不允许访问互联网（这个在代理服务器Z上做限制）这样用户A因为授权，可以通过代理服务器访问到服务器B，而用户B因为没有被代理服务器Z授权，所以访问服务器B时，数据包会被直接丢弃。
+5、隐藏访问者的行踪 ​ 如下图1.4 我们可以看出服务器B并不知道访问自己的实际是用户A，因为代理服务器Z代替用户A去直接与服务器B进行交互。如果代理服务器Z被用户A完全控制（或不完全控制），会惯以“肉鸡”术语称呼。​ （图1.4）
+​
+​ 我们总结一下 正向代理是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端必须设置正向代理服务器，当然前提是要知道正向代理服务器的IP地址，还有代理程序的端口。
+二、反向代理（reverse proxy） ​ 反向代理正好与正向代理相反，对于客户端而言代理服务器就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端。使用反向代理服务器的作用如下：
+1、保护和隐藏原始资源服务器如下图2.1 ​ （图2.1）
+​ 用户A始终认为它访问的是原始服务器B而不是代理服务器Z，但实用际上反向代理服务器接受用户A的应答，从原始资源服务器B中取得用户A的需求资源，然后发送给用户A。由于防火墙的作用，只允许代理服务器Z访问原始资源服务器B。尽管在这个虚拟的环境下，防火墙和反向代理的共同作用保护了原始资源服务器B，但用户A并不知情。
+2、负载均衡 如下图2.2​ （图2.2）
+​ 当反向代理服务器不止一个的时候，我们甚至可以把它们做成集群，当更多的用户访问资源服务器B的时候，让不同的代理服务器Z（x）去应答不同的用户，然后发送不同用户需要的资源。当然反向代理服务器像正向代理服务器一样拥有CACHE的作用，它可以缓存原始资源服务器B的资源，而不是每次都要向原始资源服务器B请求数据，特别是一些静态的数据，比如图片和文件，如果这些反向代理服务器能够做到和用户X来自同一个网络，那么用户X访问反向代理服务器X，就会得到很高质量的速度。这正是CDN技术的核心。如下图2.3​ （图2.3）
+​ 我们并不是讲解CDN，所以去掉了CDN最关键的核心技术智能DNS。只是展示CDN技术实际上利用的正是反向代理原理这块。反向代理结论与正向代理正好相反，对于客户端而言它就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端，就像这些内容原本就是它自己的一样。基本上，网上做正反向代理的程序很多，能做正向代理的软件大部分也可以做反向代理。开源软件中最流行的就是squid，既可以做正向代理，也有很多人用来做反向代理的前端服务器。另外MS ISA也可以用来在WINDOWS平台下做正向代理。反向代理中最主要的实践就是WEB服务，近些年来最火的就是Nginx了。网上有人说NGINX不能做正向代理，其实是不对的。NGINX也可以做正向代理，不过用的人比较少了。
+三、透明代理 ​ 如果把正向代理、反向代理和透明代理按照人类血缘关系来划分的话。那么正向代理和透明代理是很明显堂亲关系，而正向代理和反向代理就是表亲关系了 。透明代理的意思是客户端根本不需要知道有代理服务器的存在，它改编你的request fields（报文），并会传送真实IP。注意，加密的透明代理则是属于匿名代理，意思是不用设置使用代理了。透明代理实践的例子就是时下很多公司使用的行为管理软件。如下图3.1​ （图3.
+  
+  <div class="read-more-link">
+    <a href="/post/%E8%BD%AC-%E5%9B%BE%E8%A7%A3-%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/php%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">PHP 面试题纪录</a>
+  </h1>
+  <span class="post-date">Sun, May 21, 2017</span>
+  数据库 连接数据库 $DB = new PDO(&quot;mysql:host=localhost;dbname=mydatabase&quot;,&quot;root&quot;,&quot;&quot;); $DB-&gt;query(&quot;SET NAMES UTF8&quot;);  MyISAM与InnoDB索引的区别，还有哪些索引方式？ 1. MyISAM引擎是一种非事务性的引擎，提供高速存储和检索，以及全文搜索能力，适合数据仓库等查询频繁的应用 2. InnoDB则是一种支持事务的引擎。给MySQL提供了具有提交，回滚和崩溃恢复能力的事务安全（ACID兼容）存储引擎。 3. hash索引、B-Tree索引、Full-text索引。。。  优化查询的过程是怎么样的？ 0. 先运行看看是否真的很慢，注意设置SQL_NO_CACHE 1. where条件单表查，锁定最小返回记录表。这句话的意思是把查询语句的where都应用到表中返回的记录数最小的表开始查起，单表每个字段分别查询，看哪个字段的区分度最高 2. explain查看执行计划，是否与1预期一致（从锁定记录较少的表开始查询） 3. order by limit 形式的sql语句让排序的表优先查 4. 了解业务方使用场景 5. 加索引时参照建索引的几大原则 6. 观察结果，不符合预期继续从0分析  两张表 city表和province表。分别为城市与省份的关系表。 city: id City provinceid 1 广州 1 2 深圳 1 3 惠州 1 4 长沙 2 5 武汉 3  province: id province 1 广东 2 湖南 3 湖北  （1） 写一条sql语句关系两个表，显示字段：城市id ，城市名， 所属省份 。如：
+  
+  <div class="read-more-link">
+    <a href="/post/php%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E8%AF%BB%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/">阅后有感: 《未来世界的幸存者》</a>
+  </h1>
+  <span class="post-date">Thu, May 18, 2017</span>
+  ​ 提要：《未来世界的幸存者》是知名blogger阮一峰在网络博客里写的文章，主要表达了作者对于未来世界的一些看法。
+ 本篇是将关于《未来世界的幸存者》阅读有感作了一些纪录，虽然作者阮一峰的观点是有些许悲观的意味，都说文艺青年总要有些颓废风格嘛，恩！可能未来的社会发展会与此文的观点大相径同，不过未来谁说的清呢？风云万变一瞬息。以下是阅读文章后的感悟及对我有所触动的文章内容。   上图是文章的首页，说的是去年 AlphaGo 战胜了围棋高手李世石，去年的3，4月份感觉铺天盖地都是人工智能，机器取代人类工作等话题新闻，那时才突然意识到身边已被众多软件，如打车软件、网购团购、支付应用等科技服务所包围。科技正在以飞快的速度改变着世界。而其他传统行业却好像是一个个已经开发完成的项目，只是稍加完善，但变化是微乎其微。  为什么世界上没有安全的工作？  文章中提到关于Flash、Nokia的塞班系统这样的时代巨人最后黯然离场的结局。  大概是6年前，我每次把我那老古董台式机折腾出问题后，开始重装系统后的第一件事就是去下载 Flash 播放器插件，那时的我以为电脑没有这个软件就不是一个完整的系统，却没想到几年后，乔布斯宣布IOS 设备将不再支持使用 Flash，然后是 web 上被 H5取代，游戏被Unity3d占领了市场，公司开发的新产品也都不再考虑 Flash了，Flash就这样悄无声息的退出了大舞台。 在具有颠覆性的苹果手机没出现之前，手机市场是 Nokia 的天下，滑盖手机、全键盘、黑莓手机，这些名字像是被尘埃覆盖的古遗迹一般，满满的历史味道。 上面所提到的这些是软件的更新迭代，但是否想过靠这些工作生存的开发者们怎么办？何去何从？在某一技术方向里钻研了那么长时间，所耗费的时间、精力，技能专长突然出路就断了。现在的前端发展也是迅猛的吓人，平均每个月都会出现一个新框架，让前端开发者们应接无暇，在决定学习新技术的同时，还得千思万虑判断往后的市场需求。当一种技术消亡的时候，与它相关的工作岗位也就消亡了。   你的命运不是一头骡子  在看到第二章关于人生计划章节时，文章开头有这么一张照片，还没有仔细看清文字，我脑海里已经想象到自己在工作中所扮演的角色-骡子，继续阅读文字后发现果然如是。   文章内容大概说，作者周末爬山时遇到的一幅场景：骡子拉着沉重的灯柱从山脚运到山顶，而后面的人则只是拿着棍子在后方驱赶使它按照路线行走，骡子埋着头完成自己的任务，没想过为什么要这么做？这么做的目的是什么？做的这件事能实现什么？还是认为自己的命就是骡子命？像无生命的机器一样不知疲倦地做着一件又一件重复度很高的事？除了拉灯柱还能做什么事？为了生存吃饭只能这样忍气吞声？  程序员 = 骡子 ？ 工具？只负责实现？项目工程实现后谁还会记得这群骡子呢？ 不论什么职业，尽量做可以实现自己价值的事吧！   待&hellip;
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/homebrew-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91-php-%E6%89%A9%E5%B1%95/">HomeBrew 源码编译 PHP 扩展</a>
+  </h1>
+  <span class="post-date">Fri, Apr 28, 2017</span>
+  如果你需要装个 mongodb 扩展，只需要执行下列代码就可以进行编译安装，HomeBrew已经自动为你添加 php.ini 配置内容，非常快捷！
+brew reinstall php70-mongodb --build-from-source  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/mac-%E9%85%8D%E7%BD%AE-php-fpm/">Mac 配置 PHP_FPM</a>
+  </h1>
+  <span class="post-date">Fri, Apr 28, 2017</span>
+  参考: [开发环境]Mac 配置 php-fpm
+使用 brew 安装好 php 后, 运行php-fpm 时提示我如下错误信息：
+ERROR: failed to open configuration file '/private/etc/php-fpm.conf': No such file or directory (2) ERROR: failed to load configuration file '/private/etc/php-fpm.conf' ERROR: FPM initialization failed  错误信息显示，不能打开配置文件，cd /private/etc，发现没有 php-fpm.conf 文件，但是有 php-fpm.conf.default 文件。这个文件是默认配置，我们可以复制一份，改名为 php-fpm.conf，然后再根据需要改动配置。
+cp /private/etc/php-fpm.conf.default /private/etc/php-fpm.conf  执行 php-fpm，再次报错：
+ERROR: failed to open error_log (/usr/var/log/php-fpm.log): No such file or directory (2) ERROR: failed to post process the configuration ERROR: FPM initialization failed  错误信息显示，不能打开错误日志文件。cd /usr/var/log 发现根本没有这个目录，甚至连 var 目录都没有，加上为了避免权限问题，干脆配置到 /usr/local/var/log 目录。
+  
+  <div class="read-more-link">
+    <a href="/post/mac-%E9%85%8D%E7%BD%AE-php-fpm/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/workerman-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84php-socket%E6%A1%86%E6%9E%B6/">Workerman - 高性能的PHP socket框架</a>
+  </h1>
+  <span class="post-date">Thu, Apr 20, 2017</span>
+  介绍 ​ WorkerMan是一款纯PHP开发的开源的高性能的PHP socket服务器框架，基于WorkerMan开发者可以开发出各种网络服务器，即时IM通讯，游戏服务器通讯，与硬件传感器通讯等等，开发这些应用程序我们无法直接使用Nginx/Apache + PHP来实现，几乎任何基于TCP/UDP通讯的服务端都可以用WorkerMan来开发。WorkerMan使得开发者摆脱PHP只能用于Web开发的束缚，向更广阔的前景发展。
+特性  纯 PHP 开发
+ 支持PHP多进程
+ 支持TCP、UDP
+ 支持长连接
+ 支持各种应用层协议
+ 支持高并发
+ 支持服务平滑重启
+ 支持文件更新检测及自动加载
+ 支持以指定用户运行子进程
+ 支持对象或者资源永久保持
+ 高性能
+ 支持HHVM
+ 支持分布式部署
+ 支持守护进程化
+ 支持多端口监听
+ 支持标准输入输出重定向
+  安装配置  pcntl扩展  pcntl 扩展是 PHP 在 Linux 环境下进程控制的扩展
+ posix扩展  posix扩展使得PHP在Linux环境可以调用系统通过POSIX标准提供的接口
+ libevent扩展 或者 Event扩展  libevent扩展(或者event扩展)使得PHP可以使用系统Epoll、Kqueue等高级事件处理机制，能够显著提高WorkerMan在高并发连接时CPU利用率。在高并发长连接相关应用中非常重要。（非必要安装，默认使用PHP 原生 Select 事件处理机制）
+目录结构 Workerman // workerman内核代码 ├── Connection // socket连接相关 │ ├── ConnectionInterface.
+  
+  <div class="read-more-link">
+    <a href="/post/workerman-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84php-socket%E6%A1%86%E6%9E%B6/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/homebrew-%E5%AE%89%E8%A3%85-phpnginxmysql/">Homebrew 安装 PHP、Nginx、MySql</a>
+  </h1>
+  <span class="post-date">Wed, Apr 19, 2017</span>
+  参考 全新安装 Mac OS Sierra (10.12) 并使用 HomeBrew 安装 ZSH + MNMP (Mac + Nginx + MySQL + PHP) 开发环境
+安装 Mysql 查找 mysql
+➜ ~ brew search mysql automysqlbackup mysql-connector-c homebrew/php/php53-mysqlnd_ms mysql-connector-c++ homebrew/php/php54-mysqlnd_ms mysql-sandbox homebrew/php/php55-mysqlnd_ms mysql-search-replace homebrew/php/php56-mysqlnd_ms mysql-utilities mysql mysql@5.5 mysql++ mysql@5.6 mysql-cluster mysqltuner Caskroom/cask/mysql-connector-python Caskroom/cask/mysql-shell Caskroom/cask/mysql-utilities Caskroom/cask/mysqlworkbench Caskroom/cask/navicat-for-mysql Caskroom/cask/sqlpro-for-mysql  查看版本信息
+➜ ~ brew info mysql mysql: stable 5.7.17 (bottled)  执行安装
+➜ ~ brew install mysql # 略.
+  
+  <div class="read-more-link">
+    <a href="/post/homebrew-%E5%AE%89%E8%A3%85-phpnginxmysql/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/">Git 常用命令整理</a>
+  </h1>
+  <span class="post-date">Tue, Apr 11, 2017</span>
+  git config 配置文件的三种级别  # 版本库级别: git config -e # 全局(用户主目录下): git config -e --global # 系统级: git config -e --system   添加修改配置文件参数  git config a.b something   不删除工作目录文件，仅删除暂存区的文件  git rm --cached cached.txt   跳过使用暂存区域直接提交  git commit -a -m &quot;不使用git add 直接提交&quot;   查找当前工作区的Git版本库位置  $ pwd /Applications/www/My blog/source $ git rev-parse --git-dir /Applications/www/My blog/.git   显示工作区根目录  git rev-parse -- /Applications/www/My blog   显示工作区根目录的相对目录  $ cd source/_posts git rev-parse --show-prefix source/_posts/   重新修改最新的提交, 改正作者和提交者的错误信息  $ git commit --amend --allow-empty --reset-author ## 参数说明: # --amend 对刚刚的提交进行修补,不产生新的提交 # --allow-empty 使空白提交被允许 # --reset-author 将Author提交者的ID同步修改,重置AuthorDate信息   精简查看日志  git log --pretty=oneline   精简格式的状态  git status -s   比较差异  # 工作区与提交暂存区(stage)对比: git diff # 工作区与HEAD(当前工作分支)对比: git diff HEAD # 提交暂存区与版本库文件比较: git diff --cached # 比较里程碑 A 和里程碑 B git diff A B # 比较工作区和里程碑 A git diff A   逐词比较  git diff --word-diff   文件追溯，找出谁修改过文件，由谁引入  git blame README # 只查看第2行后面的3行 git blame -L 2,+3 README   显示暂存区的目录树  git ls-file -s   通过Git日志重置master  $ git reflog show master| head -5 9cb12d3 master@{0}: reset: moving to 9cb12d3 f1fbdca master@{1}: reset: moving to HEAD^ cba158e master@{2}: commit: does master follow this new commit?
+  
+  <div class="read-more-link">
+    <a href="/post/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/mamp-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85-php-%E6%89%A9%E5%B1%95/">MAMP 环境安装 PHP 扩展</a>
+  </h1>
+  <span class="post-date">Tue, Apr 11, 2017</span>
+  最近在研究Workerman (一个 PHP socket 服务器框架) ，需要使用到PCNTL扩展（支持 PHP 多线程操作），但因为自己一直使用的是 MMAP 集成环境，安装PHP 扩展总是会发生一些很迷的事情（填前段时间安装 Swoole 的坑。。），所以打算这次解决了它！
+替换 Mac 自带 PHP 打开配置环境变量文件：
+ vi ~/.bash_profile
+ 在全局变量里添加MAMP 的 PHP 路径：
+export MAMP_PHP=/Applications/MAMP/bin/php/php7.1.1/bin export PATH=&quot;$MAMP_PHP:$PATH&quot;  查看 PHP 版本是否为 MAMP 当前使用的版本(使用的7.1版本):
+ php -v
+ PHP 7.1.1 (cli) (built: Jan 23 2017 15:09:57) ( NTS ) Copyright (c) 1997-2017 The PHP Group Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies  初始化 MAMP 的 PHP 因为 MAMP 自带的 PHP 没有包含源码，在 PHP源码下载 你当前使用的 MAMP 使用 PHP 版本，下载完成后解压：
+  
+  <div class="read-more-link">
+    <a href="/post/mamp-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85-php-%E6%89%A9%E5%B1%95/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/php-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">PHP 依赖注入</a>
+  </h1>
+  <span class="post-date">Thu, Apr 6, 2017</span>
+  依赖注入简单说就是通过构造注入，函数调用或者属性的设置来提供组件的赖关系。 下面是一个简单的实例化类：
+&lt;?php namespace Databases; class Databases { protected $adapter; public function __construct() { $this-&gt;adapter = new MysqlAdapter; } } class MysqlAdapter {code...}  使用依赖注入重构，实现解耦：
+&lt;?php namespace Database; class Database { protected $adapter; public function __construct(MySqlAdapter $adapter) { $this-&gt;adapter = $adapter; } } class MysqlAdapter {code...}  这样就可以通过外界给予 Database 类的依赖，不是让这个类自己产生依赖的对象。
+控制反转 顾名思义，一个系统通过组织控制和对象的完全分离来实现”控制反转”。对于依赖注入，这就意味着通过在系统的其他地方控制和实例化依赖对象，从而实现了解耦。
+依赖反转准则 依赖反转准则是面向对象设计准则 S.O.L.I.D 中的 “D” ，倡导 &ldquo;依赖于抽象而不是具体&rdquo;，依赖应该是接口或着抽象类，不是固定具体的实现。
+&lt;?php namespace Database; class Database { protected $adapter; public function __construct(AdapterInterface $adapter) { $this-&gt;adapter = $adapter; } } interface AdapterInterface {} class MysqlAdapter implements AdapterInterface {code.
+  
+  <div class="read-more-link">
+    <a href="/post/php-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">Mac vi 无法编辑~/.base_profile(配置全局变量)</a>
+  </h1>
+  <span class="post-date">Wed, Mar 29, 2017</span>
+  vi编辑 .base_profile 文件时,提示如下信息:
+E325: ATTENTION Found a swap file by the name &quot;.bash_profile.swp&quot; owned by: root dated: Tue Nov 10 17:42:38 2017 file name: /etc/proftpd/etc/proftpd.conf modified: no user name: root host name: localhost process ID: 11195 While opening file &quot;.bash_profile&quot; dated: Tue Nov 10 18:32:16 2017 NEWER than swap file! (1) Another program may be editing the same file. If this is the case, be careful not to end up with two different instances of the same file when making changes.
+  
+  <div class="read-more-link">
+    <a href="/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/configure-error-cannot-find-openssl-s-evp-h/">configure: error: Cannot find OpenSSL&#39;s &lt;evp.h&gt;</a>
+  </h1>
+  <span class="post-date">Wed, Mar 29, 2017</span>
+  进行编译安装PHP-mongodb扩展, 执行 ./configure 时提示如下错误信息:
+configure: error: Cannot find OpenSSL's &lt;evp.h&gt;  因为执行的PHP是MAMP里集成的, 缺少OpenSSL，只有编译安装的PHP才有OpenSSL，偷个懒直接使用brew下载一个PHP。执行 configure 时添加如下参数(换成homebrew下载的php-openssl目录)如下命令：
+./configure --with-openssl-dir=/usr/local/Cellar/openssl/1.0.2k  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/">Hexo更换主题 (此篇以安装NexT为例)</a>
+  </h1>
+  <span class="post-date">Fri, Mar 24, 2017</span>
+  进入到主题文件目录 cd themes  默认主题 landscape 目录结构:
+clone hexo-theme-next 并改名为 next git clone https://github.com/iissnan/hexo-theme-next.git next  当然你也可以clone 自己喜欢的Hexo主题Git地址,只需要将主题文件复制到themes这个文件内就可以了:
+git clone theme_url.git  打开Hexo根目录下的 _config.yml 站点配置文件（tips:注意空格!）,将 theme 的landscape修改为刚才clone的 next # Extensions ## Plugins: https://hexo.io/plugins/ ## Themes: https://hexo.io/themes/ theme: next  同时设置一下站点的语言、时区，其他的配置可根据自己喜好更改：
+language: zh-Hans timezone: Asia/Urumqi  执行一下 hexo clear 清除缓存。
+验证主题是否存在异常问题 hexo s --debug  会提示如下信息，访问 http://localhost:4000/ :
+INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop  主题具体配置 通过更改 themes/next/_config.
+  
+  <div class="read-more-link">
+    <a href="/post/hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/github-%E9%85%8D%E7%BD%AE%E5%AF%86%E9%92%A5-%E4%B8%8D%E5%BF%85%E6%AF%8F%E6%AC%A1%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/">GitHub 配置秘钥SSH</a>
+  </h1>
+  <span class="post-date">Thu, Mar 23, 2017</span>
+  1、查看电脑是否已经有 SHH key 终端输入:
+➜ cd ~/.ssh ➜ ls id_rsa id_rsa.pub known_hosts  如果有 id_rsa.pub 或者 id_dsa.pub 任一文件, 那么就不需要再生成SSH key, 直接进行第3步就行。
+2、创建 SSH key ssh-keygen -t rsa -C &quot;your_email@mail.com&quot;  代码参数:
+-t 密钥类型, 默认rsa
+-C 注释
+-f 指定密钥文件存储的文件名,不加此参数运行后仍然会让你输入一个文件名,按下enter键使用默认文件名就行。
+会提示你输入两次密码(此密码是push文件时输入的密码,不是GitHub的登录密码),也可以直接enter。接下来会将SSH key提示给你：
+# The key fingerprint is: # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com  3、登录GitHub在个人中心打开 SSH and GPG keys 页面点击 New SSH key 按钮将 SSH key 粘贴到页面Key区域内 4、查看是否已正常使用SSH 终端输入:
+➜ .ssh ssh -T git@github.com  enter回车后,会见到字段,就表示已经成功了:
+  
+  <div class="read-more-link">
+    <a href="/post/github-%E9%85%8D%E7%BD%AE%E5%AF%86%E9%92%A5-%E4%B8%8D%E5%BF%85%E6%AF%8F%E6%AC%A1%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/mac%E4%BD%BF%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">Mac使用快捷键快速启动应用程序</a>
+  </h1>
+  <span class="post-date">Thu, Mar 23, 2017</span>
+   打开Mac自带的Automator应用程序   文稿类型选择服务   设置应用程序   将iTerm应用拖到空白区域 Command+Shift+Option+S 保存   系统偏好设置-键盘-快捷键-服务-通用  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/macos-%E9%85%8D%E7%BD%AEiterm2-oh-my-zsh%E4%B8%BB%E9%A2%98/">MacOS 配置iTerm2 &#43; Oh My Zsh主题</a>
+  </h1>
+  <span class="post-date">Thu, Mar 16, 2017</span>
+  😏 想让你的终端也变成这样？Come On！跟着我左手右手一个慢动作&hellip; ☝️ 1. Download - iTerm2
+iTerm2官网下载地址
+☝️ 2. Install oh-my-zsh now
+🙄 Your terminal never felt this good before!
+🙄 就像 Oh My Zsh 的主页上面说的：“当你用了这些非常酷的命令行工具后，人们来到你的电脑前，一定会对你的命令行大加称赞。迎来一片点赞。”
+还有酱紫简单点带可爱风的小图标呢! 使用curl下载：
+curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh  安装完成后，显示如下:
+Cloning Oh My Zsh... Cloning into '/Users/icafe/.oh-my-zsh'... remote: Counting objects: 712, done. remote: Compressing objects: 100% (584/584), done. remote: Total 712 (delta 15), reused 522 (delta 4), pack-reused 0 Receiving objects: 100% (712/712), 443.58 KiB | 27.
+  
+  <div class="read-more-link">
+    <a href="/post/macos-%E9%85%8D%E7%BD%AEiterm2-oh-my-zsh%E4%B8%BB%E9%A2%98/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/">使用GitHub写Blog</a>
+  </h1>
+  <span class="post-date">Thu, Mar 16, 2017</span>
+  创建GitHub Pages  新建一个GitHub的仓库, 仓库名称必须设置为$username.github.io (比如我的GitHub用户名为SurprisePeas, Repository填写SurprisePeas.github.io)  环境准备( 安装 Node.js Git ) 安装Git Node
+brew install git brew install node   查看已安装的开源软件包、安装位置
+ brew list brew list node  安装配置Hexo 搭建博客的核心
+感兴趣想深入了解Hexo的同学可以查看Hexo官网解锁更多玩法。
+ 安装Hexo
+ npm install hexo-cli -g   安装好hexo以后，在终端输入：hexo , 若出现下图，说明安装成功:
+  初始化创建博客(blog)
+ // 进入目录 cd &lt;path&gt; // 执行init初始化并创建blog项目文件 hexo init &lt;blog&gt; // 进入demo博客目录 cd blog // 根据dependencies配置安装所有的依赖包 npm install   初始化后的目录结构如图:  配置Blog项目
+  
+  <div class="read-more-link">
+    <a href="/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/collaborativeproject/">Awesome Collaborative Project</a>
+  </h1>
+  <span class="post-date">Mon, Oct 5, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/collaborativeproject/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/snippet/">Useful Code Snippet</a>
+  </h1>
+  <span class="post-date">Mon, Oct 5, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/snippet/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/coolcode/">A Cool Piece of Code</a>
+  </h1>
+  <span class="post-date">Sun, Sep 27, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/coolcode/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/coolwebsite/">A Cool Website</a>
+  </h1>
+  <span class="post-date">Sun, Sep 27, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/coolwebsite/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/myproject/">Another Cool Website</a>
+  </h1>
+  <span class="post-date">Sun, Sep 27, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/myproject/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/project/hugotheme/">Material Design Lite theme for Hugo</a>
+  </h1>
+  <span class="post-date">Sun, Sep 27, 2015</span>
+  Mustache keytar disrupt ugh PBR. Before they sold out Brooklyn pickled, lumbersexual lo-fi mustache hoodie Tumblr Banksy semiotics salvia seitan 8-bit four loko PBR. Readymade mumblecore selfies, forage Schlitz Truffaut Portland PBR&amp;B brunch sustainable chia retro 90&rsquo;s tofu actually. Cold-pressed synth pickled Blue Bottle, chambray photo booth Schlitz Austin leggings distillery. Whatever kogi gastropub hashtag, 90&rsquo;s wayfarers church-key ennui chia actually. Disrupt Bushwick trust fund, bicycle rights umami pork belly sartorial lumbersexual scenester asymmetrical Schlitz.
+  
+  <div class="read-more-link">
+    <a href="/project/hugotheme/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="http://guopuke.github.io/about/">About Me</a>
+  </h1>
+  <span class="post-date">Tue, Aug 18, 2015</span>
+  90&rsquo;s slow-carb Schlitz Shoreditch mixtape typewriter, wayfarers Austin keffiyeh Helvetica artisan flexitarian. Health goth vinyl scenester pickled kitsch. Organic slow-carb stumptown freegan, PBR ugh chia Intelligentsia pork belly locavore retro kale chips. Tofu put a bird on it squid tattooed beard master cleanse, mumblecore keytar mustache blog direct trade PBR&amp;B quinoa.
+Education  2015 - Master of Arts in Wine Tasting, University of British Columbia
+ 2013 - Bachelor of Arts , University of British Columbia
+  
+  <div class="read-more-link">
+    <a href="/about/">Read More…</a>
+  </div>
+  
+</div>
+</div>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Base_profile on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/base_profile/</link>
+    <description>Recent content in Base_profile on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Mar 2017 17:08:46 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/base_profile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac vi 无法编辑~/.base_profile(配置全局变量)</title>
+      <link>http://guopuke.github.io/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Wed, 29 Mar 2017 17:08:46 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</guid>
+      <description>vi编辑 .base_profile 文件时,提示如下信息:
+E325: ATTENTION Found a swap file by the name &amp;quot;.bash_profile.swp&amp;quot; owned by: root dated: Tue Nov 10 17:42:38 2017 file name: /etc/proftpd/etc/proftpd.conf modified: no user name: root host name: localhost process ID: 11195 While opening file &amp;quot;.bash_profile&amp;quot; dated: Tue Nov 10 18:32:16 2017 NEWER than swap file! (1) Another program may be editing the same file. If this is the case, be careful not to end up with two different instances of the same file when making changes.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Swoole 实现消息发送功能 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Swoole 实现消息发送功能</h1>
+  <span class="post-date">Mon, May 22, 2017</span>
+  
+
+<h4 id="导语">导语</h4>
+
+<ul>
+<li><a href="http://www.swoole.com">Swoole</a> 是 PHP 的一个扩展，使用纯C语言编写，Swoole底层内置了异步非阻塞、多线程的网络IO服务器。PHP程序员仅需处理事件回调即可，无需关心底层。</li>
+<li>官网提供了<a href="https://wiki.swoole.com/wiki/page/p-server.html">PHP语言的异步多线程服务器</a>，<a href="https://wiki.swoole.com/wiki/page/p-client.html">异步TCP/UDP网络客户端</a>，<a href="https://wiki.swoole.com/wiki/page/517.html">异步MySQL</a>，<a href="https://wiki.swoole.com/wiki/page/p-redis.html">异步Redis</a>，<a href="https://github.com/swoole/framework/blob/master/tests/async_mysql.php">数据库连接池</a>，<a href="https://wiki.swoole.com/wiki/page/134.html">AsyncTask</a>，<a href="http://wiki.swoole.com/wiki/page/289.html">消息队列</a>，<a href="https://wiki.swoole.com/wiki/page/244.html">毫秒定时器</a>，<a href="https://wiki.swoole.com/wiki/page/183.html">异步文件读写</a>，<a href="https://wiki.swoole.com/wiki/page/186.html">异步DNS查询</a>。 Swoole内置了<a href="https://wiki.swoole.com/wiki/page/326.html">Http/WebSocket服务器端</a>/<a href="https://wiki.swoole.com/wiki/page/p-http_client.html">客户端</a>、<a href="https://wiki.swoole.com/wiki/page/326.html">Http2.0服务器端</a>。</li>
+</ul>
+
+<h4 id="安装swoole">安装Swoole</h4>
+
+<ul>
+<li><p>下载地址：<a href="https://github.com/swoole/swoole-src/releases">Downloads</a></p></li>
+
+<li><p>解包，进入swoole-src 目录执行</p></li>
+</ul>
+
+<pre><code class="language-powershell">  ~ ᐅ phpize
+  ~ ᐅ ./configure
+  ~ ᐅ make 
+  ~ ᐅ sudo make install
+</code></pre>
+
+<ul>
+<li>打开 <code>php.ini</code> 文件添加扩展（具体根据自己使用的 PHP 路径）：</li>
+</ul>
+
+<blockquote>
+<p>vi /usr/local/etc/php/7.0/php.ini</p>
+</blockquote>
+
+<pre><code class="language-powershell">  extension=swoole.so
+</code></pre>
+
+<ul>
+<li>重启 PHP-FPM</li>
+</ul>
+
+<blockquote>
+<p>sudo /usr/local/Cellar/php70/7.0.18_10/sbin/php70-fpm restart</p>
+</blockquote>
+
+<ul>
+<li>查看Swoole 扩展是否已安装成功</li>
+</ul>
+
+<blockquote>
+<p>php -m</p>
+</blockquote>
+
+<p>​</p>
+
+<h4 id="运行-server">运行 Server</h4>
+
+<ul>
+<li>创建一个 <code>server.php</code> 文件，用来启动 Swoole 的服务</li>
+</ul>
+
+<pre><code class="language-php">  &lt;?php
+
+  // 创建 server 并监听9300端口
+  $server = new \swoole_server(&quot;127.0.0.1&quot;, 9300);
+
+  //监听连接进入事件
+  $server-&gt;on('connect', function ($server, $fd) {  
+      echo &quot;Client: Connect.\n&quot;;
+  });
+
+  //监听数据发送事件
+  $server-&gt;on('receive', function ($server, $fd, $from_id, $data) {
+      $server-&gt;send($fd, &quot;Server: &quot;.$data);
+  });
+
+  //监听连接关闭事件
+  $server-&gt;on('close', function ($server, $fd) {
+      echo &quot;Client: Close.\n&quot;;
+  });
+
+  //启动服务器
+  $server-&gt;start(); 
+</code></pre>
+
+<p>运行 <code>server.php</code> 文件就会发现开始监听9300端口了</p>
+
+<blockquote>
+<p>php server.php</p>
+</blockquote>
+
+<p>另开一个终端执行远程登录输入 ‘hello world’</p>
+
+<blockquote>
+<p>telnet 127.0.0.1 9300</p>
+</blockquote>
+
+<pre><code class="language-powershell">  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  hello world
+  Server: hello world
+</code></pre>
+
+<ul>
+<li>创建 <code>client.php</code> 文件，建立 TCP客户端请求发送数据</li>
+</ul>
+
+<pre><code class="language-php">  &lt;?php
+  /**
+   * client
+   */
+
+  function writeMsg($message = &quot;Hello Everybody&quot;)
+  {
+      $host = &quot;127.0.0.1&quot;;
+      $port = 9300;
+      // $client = new Swoole\Client(SWOOLE_TCP | SWOOLE_ASYNC | SWOOLE_SSL);
+      $client = new \swoole_client(SWOOLE_SOCK_TCP);
+      // 连接远程服务器：bool $swoole_client-&gt;connect(string $host, int $port, float $timeout = 0.1, int $flag = 0)
+      if (!$client-&gt;connect($host, $port, 1)) {
+          echo &quot;Error: {$client-&gt;errMsg}[{$client-&gt;errCode}]\n&quot;;
+      }
+
+    	/*
+    	转码发送发送给服务端
+    	$data = array(
+              &quot;url&quot; =&gt;  &quot;http://127.0.0.1/send_mail&quot; ,
+              &quot;param&quot; =&gt; array(
+                  &quot;username&quot;=&gt;'test',
+                  &quot;password&quot; =&gt; 'test'
+                  )
+              );
+      $json_data = json_encode($data);
+      $client-&gt;send($json_data);
+    	*/
+    
+      $client-&gt;send($message);
+
+      // 从服务器接收数据
+      $data = $client-&gt;recv();
+      if (!$data) {
+          die(&quot;recv failed.&quot;);
+      }
+      echo $data;
+      // 关闭连接
+      $client-&gt;close();
+  }
+
+  writeMsg();	
+</code></pre>
+
+<ul>
+<li><p>调用客户端
+&gt; php client.php</p></li>
+
+<li><p>服务端会返回</p></li>
+</ul>
+
+<pre><code class="language-powershell">Swoole: Hello Everybody
+</code></pre>
+
+<p><strong><em>本文只是个 demo，client.php 课根据自己的业务需求增加业务代码就行，简单流程就是这样</em></strong></p>
+
+<p>再推荐一个<a href="http://www.workerman.net">Workerman</a>（是一款<strong>纯PHP开发</strong>的<strong>开源</strong>高性能的PHP socket 服务器框架），用法更加简单，只需要一个 pcntl 的网络扩展 + 引入类文件就可以使用。</p>
+
+<ul>
+<li><a href="https://surprisepeas.github.io/2017/04/20/Workerman-高性能的PHP-socket框架/">Workerman - 高性能的PHP socket框架</a></li>
+</ul>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

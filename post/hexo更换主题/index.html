@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Hexo更换主题 (此篇以安装NexT为例) &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Hexo更换主题 (此篇以安装NexT为例)</h1>
+  <span class="post-date">Fri, Mar 24, 2017</span>
+  
+
+<h3 id="进入到主题文件目录">进入到主题文件目录</h3>
+
+<pre><code class="language-Shell">cd themes
+</code></pre>
+
+<p>默认主题 <u>landscape</u> 目录结构:</p>
+
+<p><img src="http://omixc2ggv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-24%2009.39.24.png" alt="themes目录结构" /></p>
+
+<h3 id="clone-hexo-theme-next-并改名为-next">clone <code>hexo-theme-next</code> 并改名为 <code>next</code></h3>
+
+<pre><code class="language-Shell">git clone https://github.com/iissnan/hexo-theme-next.git next
+</code></pre>
+
+<p>当然你也可以clone 自己喜欢的Hexo主题Git地址,只需要将主题文件复制到themes这个文件内就可以了:</p>
+
+<pre><code class="language-Shell">git clone theme_url.git
+</code></pre>
+
+<h3 id="打开hexo根目录下的-config-yml-站点配置文件-tips-注意空格-将-theme-的landscape修改为刚才clone的-next">打开Hexo根目录下的 <code>_config.yml</code> 站点配置文件（tips:注意空格!）,将 <code>theme</code> 的landscape修改为刚才clone的 <code>next</code></h3>
+
+<pre><code class="language-yaml"># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+</code></pre>
+
+<p>同时设置一下站点的语言、时区，其他的配置可根据自己喜好更改：</p>
+
+<pre><code class="language-Yaml">language: zh-Hans
+timezone: Asia/Urumqi
+</code></pre>
+
+<p>执行一下 <code>hexo clear</code> 清除缓存。</p>
+
+<h3 id="验证主题是否存在异常问题">验证主题是否存在异常问题</h3>
+
+<pre><code class="language-shell">hexo s --debug
+</code></pre>
+
+<p>会提示如下信息，访问 <code>http://localhost:4000/</code> :</p>
+
+<pre><code class="language-shell">INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop
+</code></pre>
+
+<h3 id="主题具体配置">主题具体配置</h3>
+
+<p>通过更改 <code>themes/next/_config.yml</code> 文件对next主题进行具体的配置：</p>
+
+<pre><code class="language-Yaml"># next主题可通过修改Scheme选项获得3中不同的外观，默认使用的是Muse：
+scheme: Mist
+
+# 添加个人头像：
+avatar: http://avatar.url
+
+# 菜单栏menu配置，根据自己喜好开启注释:
+menu:
+  home: /
+  categories: /categories
+  about: /about
+  archives: /archives
+  tags: /tags
+  #sitemap: /sitemap.xml
+  commonweal: /404.html
+</code></pre>
+
+<p>玩法很多并集成了常用的第三方服务，可以参考<a href="http://theme-next.iissnan.com/getting-started.html#select-scheme">Next主题官网</a></p>
+
+<p><strong>Enjoy it !</strong></p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

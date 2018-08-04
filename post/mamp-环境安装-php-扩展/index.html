@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>MAMP 环境安装 PHP 扩展 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>MAMP 环境安装 PHP 扩展</h1>
+  <span class="post-date">Tue, Apr 11, 2017</span>
+  
+
+<p>最近在研究<strong>Workerman</strong> (<strong>一个 PHP socket 服务器框架</strong>) ，需要使用到PCNTL扩展（支持 PHP 多线程操作），但因为自己一直使用的是 MMAP 集成环境，安装PHP 扩展总是会发生一些很迷的事情（填前段时间安装 Swoole 的坑。。），所以打算这次解决了它！</p>
+
+<h5 id="替换-mac-自带-php">替换 Mac 自带 PHP</h5>
+
+<p>打开配置环境变量文件：</p>
+
+<blockquote>
+<p>vi ~/.bash_profile</p>
+</blockquote>
+
+<p>在全局变量里添加MAMP 的 PHP 路径：</p>
+
+<pre><code class="language-powershell">export MAMP_PHP=/Applications/MAMP/bin/php/php7.1.1/bin
+export PATH=&quot;$MAMP_PHP:$PATH&quot;
+</code></pre>
+
+<p>查看 PHP 版本是否为 MAMP 当前使用的版本(使用的7.1版本):</p>
+
+<blockquote>
+<p>php -v</p>
+</blockquote>
+
+<pre><code class="language-shell">PHP 7.1.1 (cli) (built: Jan 23 2017 15:09:57) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
+</code></pre>
+
+<h5 id="初始化-mamp-的-php">初始化 MAMP 的 PHP</h5>
+
+<p>因为 MAMP 自带的 PHP 没有包含源码，在 <a href="http://www.php.net/releases/">PHP源码下载</a> 你当前使用的 MAMP 使用 PHP 版本，下载完成后解压：</p>
+
+<blockquote>
+<p>tar -xzvf php-7.1.1.tar.gz</p>
+</blockquote>
+
+<p>删除MAMP 下的 PHP文件:</p>
+
+<blockquote>
+<p>rm -rf /Applications/MAMP/bin/php/php7.1.1/include/php</p>
+</blockquote>
+
+<p>将解压完成的PHP 文件移动到 include 目录:</p>
+
+<blockquote>
+<p>mv php-7.1.1 /Applications/MAMP/bin/php/php7.1.1/include/php</p>
+</blockquote>
+
+<p>进入目录检测系统配置:</p>
+
+<blockquote>
+<p>cd /Applications/MAMP/bin/php/php7.1.1/include/php</p>
+
+<p>./configure</p>
+</blockquote>
+
+<p>添加一些标志来告诉系统怎样编译。MAMP PHP已经建成这样，如果不这样做，编译的共享对象将无法工作:</p>
+
+<blockquote>
+<p>MACOSX_DEPLOYMENT_TARGET=10.10</p>
+
+<p>CFLAGS=&ldquo;-arch i386 -arch x86_64 -g -Os -pipe -no-cpp-precomp&rdquo;</p>
+
+<p>CCFLAGS=&ldquo;-arch i386 -arch x86_64 -g -Os -pipe&rdquo;</p>
+
+<p>CXXFLAGS=&ldquo;-arch i386 -arch x86_64 -g -Os -pipe&rdquo;</p>
+
+<p>LDFLAGS=&ldquo;-arch i386 -arch x86_64 -bind_at_load&rdquo;</p>
+
+<p>export CFLAGS CXXFLAGS LDFLAGS CCFLAGS MACOSX_DEPLOYMENT_TARGET</p>
+</blockquote>
+
+<h5 id="编译-pcntl">编译 PCNTL</h5>
+
+<blockquote>
+<p>cd ext/pcntl</p>
+
+<p>phpize</p>
+
+<p>./configure</p>
+
+<p>make</p>
+</blockquote>
+
+<p>将编译完成的扩展文件pcntl.so 复制到 PHP 的扩展目录:</p>
+
+<blockquote>
+<p>cp modules/pcntl.so /Applications/MAMP/bin/php/php7.1.1/lib/php/extensions/no-debug-non-zts-20160303</p>
+</blockquote>
+
+<p>php.ini 添加扩展:</p>
+
+<blockquote>
+<p>vi /Applications/MAMP/bin/php/php7.1.1/conf/php.ini</p>
+</blockquote>
+
+<p>在 <code>extension</code> 处添加扩展名</p>
+
+<pre><code class="language-Shell">extension=pcntl.so
+</code></pre>
+
+<p>查看是否安装成功:</p>
+
+<blockquote>
+<p>php &ndash;ri pcntl</p>
+</blockquote>
+
+<p>显示如下信息即说明成功:</p>
+
+<pre><code class="language-shell">
+pcntl
+
+pcntl support =&gt; enabled
+</code></pre>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

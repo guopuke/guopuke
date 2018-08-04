@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php_fpm on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/php_fpm/</link>
+    <description>Recent content in Php_fpm on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Apr 2017 13:18:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/php_fpm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac 配置 PHP_FPM</title>
+      <link>http://guopuke.github.io/post/mac-%E9%85%8D%E7%BD%AE-php-fpm/</link>
+      <pubDate>Fri, 28 Apr 2017 13:18:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/mac-%E9%85%8D%E7%BD%AE-php-fpm/</guid>
+      <description>参考: [开发环境]Mac 配置 php-fpm
+使用 brew 安装好 php 后, 运行php-fpm 时提示我如下错误信息：
+ERROR: failed to open configuration file &#39;/private/etc/php-fpm.conf&#39;: No such file or directory (2) ERROR: failed to load configuration file &#39;/private/etc/php-fpm.conf&#39; ERROR: FPM initialization failed  错误信息显示，不能打开配置文件，cd /private/etc，发现没有 php-fpm.conf 文件，但是有 php-fpm.conf.default 文件。这个文件是默认配置，我们可以复制一份，改名为 php-fpm.conf，然后再根据需要改动配置。
+cp /private/etc/php-fpm.conf.default /private/etc/php-fpm.conf  执行 php-fpm，再次报错：
+ERROR: failed to open error_log (/usr/var/log/php-fpm.log): No such file or directory (2) ERROR: failed to post process the configuration ERROR: FPM initialization failed  错误信息显示，不能打开错误日志文件。cd /usr/var/log 发现根本没有这个目录，甚至连 var 目录都没有，加上为了避免权限问题，干脆配置到 /usr/local/var/log 目录。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Workerman - 高性能的PHP socket框架 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Workerman - 高性能的PHP socket框架</h1>
+  <span class="post-date">Thu, Apr 20, 2017</span>
+  
+
+<h4 id="介绍">介绍</h4>
+
+<p>​   <a href="http://doc3.workerman.net/">WorkerMan</a>是一款纯PHP开发的开源的高性能的PHP socket服务器框架，基于WorkerMan开发者可以开发出各种网络服务器，即时IM通讯，游戏服务器通讯，与硬件传感器通讯等等，开发这些应用程序我们无法直接使用Nginx/Apache + PHP来实现，几乎任何基于TCP/UDP通讯的服务端都可以用WorkerMan来开发。WorkerMan使得开发者摆脱PHP只能用于Web开发的束缚，向更广阔的前景发展。</p>
+
+<h4 id="特性">特性</h4>
+
+<ol>
+<li><p>纯 PHP 开发</p></li>
+
+<li><p>支持PHP多进程</p></li>
+
+<li><p>支持TCP、UDP</p></li>
+
+<li><p>支持长连接</p></li>
+
+<li><p>支持各种应用层协议</p></li>
+
+<li><p>支持高并发</p></li>
+
+<li><p>支持服务平滑重启</p></li>
+
+<li><p>支持文件更新检测及自动加载</p></li>
+
+<li><p>支持以指定用户运行子进程</p></li>
+
+<li><p>支持对象或者资源永久保持</p></li>
+
+<li><p>高性能</p></li>
+
+<li><p>支持HHVM</p></li>
+
+<li><p>支持分布式部署</p></li>
+
+<li><p>支持守护进程化</p></li>
+
+<li><p>支持多端口监听</p></li>
+
+<li><p>支持标准输入输出重定向</p></li>
+</ol>
+
+<h4 id="安装配置">安装配置</h4>
+
+<ol>
+<li><a href="http://cn2.php.net/manual/zh/book.pcntl.php">pcntl扩展</a></li>
+</ol>
+
+<p>pcntl 扩展是 PHP 在 Linux 环境下进程控制的扩展</p>
+
+<ol>
+<li><a href="http://cn2.php.net/manual/zh/book.posix.php">posix扩展</a></li>
+</ol>
+
+<p>posix扩展使得PHP在Linux环境可以调用系统通过<a href="http://baike.baidu.com/view/209573.htm">POSIX标准</a>提供的接口</p>
+
+<ol>
+<li><a href="http://cn2.php.net/manual/en/book.libevent.php">libevent扩展</a> 或者 <a href="http://php.net/manual/zh/book.event.php">Event扩展</a></li>
+</ol>
+
+<p>libevent扩展(或者event扩展)使得PHP可以使用系统<a href="http://baike.baidu.com/view/1385104.htm">Epoll</a>、Kqueue等高级事件处理机制，能够显著提高WorkerMan在高并发连接时CPU利用率。在高并发长连接相关应用中非常重要。（非必要安装，默认使用PHP 原生 Select 事件处理机制）</p>
+
+<h4 id="目录结构">目录结构</h4>
+
+<pre><code class="language-php">Workerman                      // workerman内核代码
+    ├── Connection                 // socket连接相关
+    │   ├── ConnectionInterface.php// socket连接接口
+    │   ├── TcpConnection.php      // Tcp连接类
+    │   ├── AsyncTcpConnection.php // 异步Tcp连接类
+    │   └── UdpConnection.php      // Udp连接类
+    ├── Events                     // 网络事件库
+    │   ├── EventInterface.php     // 网络事件库接口
+    │   ├── Libevent.php           // Libevent网络事件库
+    │   ├── Ev.php                 // Libev网络事件库
+    │   └── Select.php             // Select网络事件库
+    ├── Lib                        // 常用的类库
+    │   ├── Constants.php          // 常量定义
+    │   └── Timer.php              // 定时器
+    ├── Protocols                  // 协议相关
+    │   ├── ProtocolInterface.php  // 协议接口类
+    │   ├── Http                   // http协议相关
+    │   │   └── mime.types         // mime类型
+    │   ├── Http.php               // http协议实现
+    │   ├── Text.php               // Text协议实现
+    │   ├── Frame.php              // Frame协议实现
+    │   └── Websocket.php          // websocket协议的实现
+    ├── Worker.php                 // Worker
+    ├── WebServer.php              // WebServer
+    └── Autoloader.php             // 自动加载类
+</code></pre>
+
+<h4 id="可用协议">可用协议</h4>
+
+<pre><code class="language-php">// http协议
+$worker1 = new Worker('http://0.0.0.0:1221');
+// websocket协议
+$worker2 = new Worker('websocket://0.0.0.0:1222');
+// text文本协议（telnet协议）
+$worker3 = new Worker('text://0.0.0.0:1223');
+// frame文本协议（可用于二进制数传输）
+$worker3 = new Worker('frame://0.0.0.0:1223');
+// 直接基于tcp传输
+$worker4 = new Worker('tcp://0.0.0.0:1224');
+// 直接基于udp传输
+$worker5 = new Worker('udp://0.0.0.0:1225');
+// 还可以自己定制协议
+// 使用测试
+</code></pre>
+
+<h4 id="gatewayworker">GatewayWorker</h4>
+
+<p><a href="http://www.workerman.net/gatewaydoc/">GatewayWorker</a>基于Workerman开发的一个项目框架，用于快速开发TCP长连接应用，GatewayWorker提供非常方便的API，可以全局广播数据、可以向某个群体广播数据、也可以向某个特定客户端推送数据。配合Workerman的定时器，也可以定时推送数据。</p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

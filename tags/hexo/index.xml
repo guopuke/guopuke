@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/hexo/</link>
+    <description>Recent content in Hexo on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Mar 2017 09:42:18 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo更换主题 (此篇以安装NexT为例)</title>
+      <link>http://guopuke.github.io/post/hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Fri, 24 Mar 2017 09:42:18 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</guid>
+      <description>进入到主题文件目录 cd themes  默认主题 landscape 目录结构:
+clone hexo-theme-next 并改名为 next git clone https://github.com/iissnan/hexo-theme-next.git next  当然你也可以clone 自己喜欢的Hexo主题Git地址,只需要将主题文件复制到themes这个文件内就可以了:
+git clone theme_url.git  打开Hexo根目录下的 _config.yml 站点配置文件（tips:注意空格!）,将 theme 的landscape修改为刚才clone的 next # Extensions ## Plugins: https://hexo.io/plugins/ ## Themes: https://hexo.io/themes/ theme: next  同时设置一下站点的语言、时区，其他的配置可根据自己喜好更改：
+language: zh-Hans timezone: Asia/Urumqi  执行一下 hexo clear 清除缓存。
+验证主题是否存在异常问题 hexo s --debug  会提示如下信息，访问 http://localhost:4000/ :
+INFO Hexo is running at http://localhost:4000/. Press Ctrl+C to stop  主题具体配置 通过更改 themes/next/_config.</description>
+    </item>
+    
+    <item>
+      <title>使用GitHub写Blog</title>
+      <link>http://guopuke.github.io/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:24 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/</guid>
+      <description>创建GitHub Pages  新建一个GitHub的仓库, 仓库名称必须设置为$username.github.io (比如我的GitHub用户名为SurprisePeas, Repository填写SurprisePeas.github.io)  环境准备( 安装 Node.js Git ) 安装Git Node
+brew install git brew install node   查看已安装的开源软件包、安装位置
+ brew list brew list node  安装配置Hexo 搭建博客的核心
+感兴趣想深入了解Hexo的同学可以查看Hexo官网解锁更多玩法。
+ 安装Hexo
+ npm install hexo-cli -g   安装好hexo以后，在终端输入：hexo , 若出现下图，说明安装成功:
+  初始化创建博客(blog)
+ // 进入目录 cd &amp;lt;path&amp;gt; // 执行init初始化并创建blog项目文件 hexo init &amp;lt;blog&amp;gt; // 进入demo博客目录 cd blog // 根据dependencies配置安装所有的依赖包 npm install   初始化后的目录结构如图:  配置Blog项目</description>
+    </item>
+    
+  </channel>
+</rss>

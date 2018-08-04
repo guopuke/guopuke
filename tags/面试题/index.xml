@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试题 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+    <description>Recent content in 面试题 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 May 2017 10:32:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP 面试题纪录</title>
+      <link>http://guopuke.github.io/post/php%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</link>
+      <pubDate>Sun, 21 May 2017 10:32:37 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/php%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</guid>
+      <description>数据库 连接数据库 $DB = new PDO(&amp;quot;mysql:host=localhost;dbname=mydatabase&amp;quot;,&amp;quot;root&amp;quot;,&amp;quot;&amp;quot;); $DB-&amp;gt;query(&amp;quot;SET NAMES UTF8&amp;quot;);  MyISAM与InnoDB索引的区别，还有哪些索引方式？ 1. MyISAM引擎是一种非事务性的引擎，提供高速存储和检索，以及全文搜索能力，适合数据仓库等查询频繁的应用 2. InnoDB则是一种支持事务的引擎。给MySQL提供了具有提交，回滚和崩溃恢复能力的事务安全（ACID兼容）存储引擎。 3. hash索引、B-Tree索引、Full-text索引。。。  优化查询的过程是怎么样的？ 0. 先运行看看是否真的很慢，注意设置SQL_NO_CACHE 1. where条件单表查，锁定最小返回记录表。这句话的意思是把查询语句的where都应用到表中返回的记录数最小的表开始查起，单表每个字段分别查询，看哪个字段的区分度最高 2. explain查看执行计划，是否与1预期一致（从锁定记录较少的表开始查询） 3. order by limit 形式的sql语句让排序的表优先查 4. 了解业务方使用场景 5. 加索引时参照建索引的几大原则 6. 观察结果，不符合预期继续从0分析  两张表 city表和province表。分别为城市与省份的关系表。 city: id City provinceid 1 广州 1 2 深圳 1 3 惠州 1 4 长沙 2 5 武汉 3  province: id province 1 广东 2 湖南 3 湖北  （1） 写一条sql语句关系两个表，显示字段：城市id ，城市名， 所属省份 。如：</description>
+    </item>
+    
+  </channel>
+</rss>

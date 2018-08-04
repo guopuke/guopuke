@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小程序 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <description>Recent content in 小程序 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Mar 2018 14:04:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信小程序发送模板消息</title>
+      <link>http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/</link>
+      <pubDate>Wed, 14 Mar 2018 14:04:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/</guid>
+      <description>前提要求  建议首先了解下官方文档 已添加模板库(模板ID) 已获取用户的 open_id, formId || prepay_id  添加模板库  通过模版消息管理接口获取模版ID 在微信公众平台手动配置获取模版ID(如下图)，此处手动获取的时候会遇到一个坑，建议使用上面的模版消息管理接口获取，当时开发时在详情里复制的模板ID其实是被HTML页面元素截断了，导致调试了很久(右键查看元素手动复制也是个办法)。  获取formId 在小程序页面 &amp;lt;form/&amp;gt; 组件，属性report-submit为true时，可以声明为需发模板消息，此时点击按钮提交表单可以获取 formId，用于发送模板消息，此处只有在真机调试的时候提交才会有，使用开发工具的时候不会产生 formId，会得到提示 the formId is a mock one。或者当用户完成支付行为，可以获取prepay_id 用于发送模板消息。
+小程序代码
+ xx.wxml
+ &amp;lt;form bindsubmit=&amp;quot;formSubmit&amp;quot; report-submit=&#39;true&#39;&amp;gt; &amp;lt;view class=&amp;quot;btn-area&amp;quot;&amp;gt; &amp;lt;button formType=&amp;quot;submit&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/view&amp;gt; &amp;lt;/form&amp;gt;   xx.js
+ formSubmit: function (e) { console.log(e.detail.formId) // Your show~ }  调用微信发送模板消息接口 POST 请求下面的地址
+https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=ACCESS_TOKEN  { // 用户的OPENID &amp;quot;touser&amp;quot;: &amp;quot;OPENID&amp;quot;, // 模板ID &amp;quot;template_id&amp;quot;: &amp;quot;TEMPLATE_ID&amp;quot;, // 链接跳转地址(小程序路由) &amp;quot;page&amp;quot;: &amp;quot;page/index&amp;quot;, // 调教表单生成 formId &amp;quot;form_id&amp;quot;: &amp;quot;FORMID&amp;quot;, // 模板消息内容 &amp;quot;data&amp;quot;: { // 键名对应下图的关键词 &amp;quot;keyword1&amp;quot;: { // 内容 &amp;quot;value&amp;quot;: &amp;quot;智能XXX&amp;quot;, // 字体颜色 &amp;quot;color&amp;quot;: &amp;quot;#173177&amp;quot; }, &amp;quot;keyword2&amp;quot;: { &amp;quot;value&amp;quot;: &amp;quot;2015年01月05日 12:30&amp;quot;, &amp;quot;color&amp;quot;: &amp;quot;#173177&amp;quot; } } }  如果项目是使用PHP开发的项目，且很多功能依赖微信开发，建议使用overtrue大神开发的EasyWeChat</description>
+    </item>
+    
+  </channel>
+</rss>

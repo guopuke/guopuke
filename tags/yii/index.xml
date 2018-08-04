@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yii on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/yii/</link>
+    <description>Recent content in Yii on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Sep 2017 23:14:08 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/yii/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yii-自动加载</title>
+      <link>http://guopuke.github.io/post/yii-%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Thu, 28 Sep 2017 23:14:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/yii-%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/</guid>
+      <description>入口脚本(web/index.php) Yii2的advanced版本默认是有2个入口的（frontend、backend），但其实只是在使用同一个框架及公共配置让2个server分离工作进行构建网站、API等。
+Web服务器每将一个请求转发过来的时候，始终只会进一个入口文件，那就是index.php了，这个文件会进行应用的初始化配置、解析路由、处理请求、连接SQL数据库。
+说了这么多，来看看入口文件内容
+&amp;lt;?php // 定义是否处于DEBUG模式(框架初始化时 ./init 选择运行环境会影响此处代码是否会产生) defined(&#39;YII_DEBUG&#39;) or define(&#39;YII_DEBUG&#39;, true); defined(&#39;YII_ENV&#39;) or define(&#39;YII_ENV&#39;, &#39;dev&#39;); // 载入composer管理依赖包,此处实现了第三方的composer包可以直接调用(因为composer有个autoload.php文件,已经处理好载入类文件的问题) require(__DIR__ . &#39;/../../vendor/autoload.php&#39;); // 载入基础类文件(核心,没有它就不能算是框架了) require(__DIR__ . &#39;/../../vendor/yiisoft/yii2/Yii.php&#39;); // 载入公共的全局配置(各应用之间的目录别名就定义在此) require(__DIR__ . &#39;/../../common/config/bootstrap.php&#39;); // 本server的相关全局配置 require(__DIR__ . &#39;/../config/bootstrap.php&#39;); // 合并所有配置项参数,并调用 Application-&amp;gt;run() $config = yii\helpers\ArrayHelper::merge( require(__DIR__ . &#39;/../../common/config/main.php&#39;), require(__DIR__ . &#39;/../../common/config/main-local.php&#39;), require(__DIR__ . &#39;/../config/main.php&#39;), require(__DIR__ . &#39;/../config/main-local.php&#39;) ); (new yii\web\Application($config))-&amp;gt;run();  核心基础类(Yii.php) 说vendor/yiisoft/yii2/Yii.php这个类是核心类呢，也不大准确，因为它其实只是一个子类，真正厉害的是它所继承的BaseYii.php，先看一下文件内容：
+// 此处还不能实现自动加载类,哈哈,所以只好简单粗暴require进来了,万变不离其宗 require(__DIR__ . &#39;/BaseYii.php&#39;); class Yii extends \yii\BaseYii { } spl_autoload_register([&#39;Yii&#39;, &#39;autoload&#39;], true, true); Yii::$classMap = require(__DIR__ .</description>
+    </item>
+    
+  </channel>
+</rss>

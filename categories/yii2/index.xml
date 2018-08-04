@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yii2 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/categories/yii2/</link>
+    <description>Recent content in Yii2 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Sep 2017 23:32:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/categories/yii2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yii-事件篇</title>
+      <link>http://guopuke.github.io/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/</link>
+      <pubDate>Thu, 21 Sep 2017 23:32:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/</guid>
+      <description>最近看到一篇 越过长城，走向世界！中国第一封 Email 发出 30 年，感慨这些先驱者们的同时，内心使命感也涌涌而上。之前也没配置过相关邮件服务，遂打算以此文来纪录学习一番。
+那么如何让用户注册账号时触发一个发送邮件的事件呢? 现在很多框架都继承了邮件的功能，遍地的轮子啊！（本篇使用Yii2框架来了解事件如何定义及如何触发并实现发送邮件功能）
+ 配置参数
+ 发送邮件的组件类
+ 通过Ioc容器来传递事件参数
+ 业务中触发发送邮件事件
+  ​
+​
+配置参数 在 common/config/main-local.php 文件中已有 mailer的一个简单配置，添加服务端邮件信息即可，配置如下：
+&#39;mailer&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;yii\swiftmailer\Mailer&#39;, &#39;viewPath&#39; =&amp;gt; &#39;@common/mail&#39;, // false发送邮件，true只是生成邮件在runtime文件夹下，不发邮件 &#39;useFileTransport&#39; =&amp;gt; false, &#39;transport&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;Swift_SmtpTransport&#39;, // 163,gmail等邮箱注意更改 &#39;host&#39; =&amp;gt; &#39;smtp.qq.com&#39;, // 登录用户名 &#39;username&#39; =&amp;gt; &#39;surprisepeas@qq.com&#39;, // 需要注意的是:如果是QQ邮箱,需要去邮箱设置里获取授权码 &#39;password&#39; =&amp;gt; &#39;qnrrfovxvsvmgade&#39;, &#39;port&#39; =&amp;gt; &#39;25&#39;, // 加密算法 &#39;encryption&#39; =&amp;gt; &#39;tls&#39;, ], &#39;messageConfig&#39; =&amp;gt; [ &#39;charset&#39; =&amp;gt; &#39;UTF-8&#39;, // 发送者名称抬头 必须与username配置一致 &#39;from&#39; =&amp;gt; [&#39;surprisepeas@qq.</description>
+    </item>
+    
+    <item>
+      <title>Yii-属性篇</title>
+      <link>http://guopuke.github.io/post/yii-%E5%B1%9E%E6%80%A7%E7%AF%87/</link>
+      <pubDate>Sat, 16 Sep 2017 00:49:52 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/yii-%E5%B1%9E%E6%80%A7%E7%AF%87/</guid>
+      <description>属性用于表征类的状态，从访问的形式上看，属性与成员变量没有区别。
+成员变量是就类的结构构成而言的概念，而属性是就类的功能逻辑而言的概念，两者紧密联系又相互区别。
+成员变量和属性的区别与联系在于：
+ 成员变量是一个“内”概念，反映的是类的结构构成。属性是一个“外”概念，反映的是类的逻辑意义。
+ 成员变量没有读写权限控制，而属性可以指定为只读或只写，或可读可写。
+ 成员变量不对读出作任何后处理，不对写入作任何预处理，而属性则可以。
+ public成员变量可以视为一个可读可写、没有任何预处理或后处理的属性。 而private成员变量由于外部不可见，与属性“外”的特性不相符，所以不能视为属性。
+ 虽然大多数情况下，属性会由某个或某些成员变量来表示，但属性与成员变量没有必然的对应关系， 比如与非门的 output 属性，就没有一个所谓的 $output 成员变量与之对应。
+  Yii通过 yii\base\Object 提供了属性的支持，很多核心基类都继承至它， yii\base\Object 通过PHP的魔术方法 __get() __set() 进行工作。</description>
+    </item>
+    
+  </channel>
+</rss>

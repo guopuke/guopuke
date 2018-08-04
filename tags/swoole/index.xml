@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swoole on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/swoole/</link>
+    <description>Recent content in Swoole on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 May 2017 23:54:53 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/swoole/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swoole 实现消息发送功能</title>
+      <link>http://guopuke.github.io/post/swoole-%E5%AE%89%E8%A3%85%E9%85%8D%E5%90%88-mongodb%E5%AE%9E%E7%8E%B0-pc-%E5%90%8E%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Mon, 22 May 2017 23:54:53 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/swoole-%E5%AE%89%E8%A3%85%E9%85%8D%E5%90%88-mongodb%E5%AE%9E%E7%8E%B0-pc-%E5%90%8E%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD/</guid>
+      <description>导语  Swoole 是 PHP 的一个扩展，使用纯C语言编写，Swoole底层内置了异步非阻塞、多线程的网络IO服务器。PHP程序员仅需处理事件回调即可，无需关心底层。 官网提供了PHP语言的异步多线程服务器，异步TCP/UDP网络客户端，异步MySQL，异步Redis，数据库连接池，AsyncTask，消息队列，毫秒定时器，异步文件读写，异步DNS查询。 Swoole内置了Http/WebSocket服务器端/客户端、Http2.0服务器端。  安装Swoole  下载地址：Downloads
+ 解包，进入swoole-src 目录执行
+  ~ ᐅ phpize ~ ᐅ ./configure ~ ᐅ make ~ ᐅ sudo make install   打开 php.ini 文件添加扩展（具体根据自己使用的 PHP 路径）：   vi /usr/local/etc/php/7.0/php.ini
+ extension=swoole.so   重启 PHP-FPM   sudo /usr/local/Cellar/php70/7.0.18_10/sbin/php70-fpm restart
+  查看Swoole 扩展是否已安装成功   php -m
+ ​
+运行 Server  创建一个 server.php 文件，用来启动 Swoole 的服务  &amp;lt;?</description>
+    </item>
+    
+  </channel>
+</rss>

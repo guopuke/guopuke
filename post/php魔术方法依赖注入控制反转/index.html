@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PHP魔术方法、依赖注入、控制反转容器 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>PHP魔术方法、依赖注入、控制反转容器</h1>
+  <span class="post-date">Fri, Sep 15, 2017</span>
+  
+
+<h3 id="依赖注入">依赖注入</h3>
+
+<p>“注入”，就是把一个实例传递到另一个实例的内部。</p>
+
+<h3 id="控制反转容器-ioc-container">控制反转容器（Ioc Container）</h3>
+
+<p>如果存在如下这样复杂的依赖关系，该如何解决呢？</p>
+
+<pre><code class="language-php">$a = new A(new B(new D(new F)), new C(new E()));
+</code></pre>
+
+<p>IoC容器（控制反转）就是为了帮助我们解决因复杂的依赖注入而产生混乱的解决方案。</p>
+
+<p><strong>IoC容器需要满足2个最基本的功能：</strong></p>
+
+<ol>
+<li><em>存储定义的类</em></li>
+<li><em>实例化类</em></li>
+</ol>
+
+<blockquote>
+<p>大概实现代码如下：</p>
+</blockquote>
+
+<pre><code class="language-php">Class Container
+  {
+  	// 保存定义的类
+    private $_definitions;
+
+    // 存储到$_definitions属性中, (类名,创建类)
+    public function set($class, $definition)
+    {
+        $this-&gt;_definitions[$class] = $definition;
+    }
+	
+  	// 查找$_definitions属性中的类
+    public function get($class, $params = [])
+    {
+      	if () {
+            $definition = $this-&gt;_definitions[$class];
+            // 调用此类下的定义
+            return call_user_func($definition, $params);
+        }else {
+            echo 'Must callable';die;
+        }
+    }
+}
+</code></pre>
+
+<h4 id="例1-发送邮件">例1. 发送邮件：</h4>
+
+<pre><code class="language-php">class EmailSenderByGmail
+{
+    private $_name;
+    public function __construct($name = '')
+    {
+        $this-&gt;_name = $name;
+    }
+    public function send()
+    {
+    }
+}
+</code></pre>
+
+<p>如何借用IoC容器操作呢？</p>
+
+<pre><code class="language-php">$cont = new Container;
+$cont-&gt;set('EmailSenderByGmail', function($name = ''){
+  return new EmailSenderByGmail($name);
+});
+
+// 调用
+$email_send_gmail = $cont-&gt;get('EmailSendByGmail','gmail');
+
+print_r($email_send_gmail);
+</code></pre>
+
+<p>步骤注释：</p>
+
+<ol>
+<li>实例化 <code>Container</code> 类，将 <code>EmailSendByGmail</code> 实例化后的类保存至 <code>Container</code> 里的 <code>$_definitions</code> 字段，</li>
+<li>通过 <code>Container</code> 获取 <code>EmailSendByGmail</code> 属性 <code>_name</code></li>
+</ol>
+
+<p>执行得到<code>_name</code> 的值：</p>
+
+<pre><code class="language-php">EmailSendByGmail Object
+(
+    [_name:EmailSendByGmail:private] =&gt; gmail
+)
+</code></pre>
+
+<h4 id="例2-用户注册时-发送邮件场景">例2. 用户注册时，发送邮件场景</h4>
+
+<p><em>实例化User,同时注入EmailObject</em></p>
+
+<pre><code class="language-php">class User
+{
+    private $_emailSenderObject;
+
+    public function __construct(EmailSenderByGmail $emailSenderObject)
+    {
+        $this-&gt;_emailSenderObject = $emailSenderObject;
+    }
+  
+  	// 注册时发送邮件功能
+    public function register()
+    {        
+        $this-&gt;_emailSenderObject-&gt;send();
+    }
+}
+</code></pre>
+
+<h4 id="使用-container-实例化-emailsenderbygmail-和-user">使用 <code>Container</code> 实例化 <code>EmailSenderByGmail</code> 和 <code>User</code></h4>
+
+<blockquote>
+<p>可以简单解决一个类依赖其它对象的问题</p>
+</blockquote>
+
+<pre><code class="language-php">$container = new Container();
+
+$container-&gt;set('EmailSenderByGmail', function ($container, $name = '') {
+    return new EmailSenderByGmail($name);
+});
+$container-&gt;set('User', function ($container, $params = []) {
+    return new User($container-&gt;get($params[0], $params[1]));
+});
+
+
+print_r($container-&gt;get('EmailSenderByGmail', ['gmail']));
+print_r($container-&gt;get('User', ['EmailSenderByGmail', 'gmail']));
+</code></pre>
+
+<p>以上虽然解决了问题，但是又出现另一个令人讨厌的问题：你需要把依赖的全部set进去，再get出来。有什么办法解决吗？用PHP提供的反射API，就可以自动实例化处理。</p>
+
+<h4 id="基于-反射-改造一下-container-类">基于<strong>反射</strong>，改造一下 <code>Container</code> 类。</h4>
+
+<pre><code class="language-php">Class Container
+{
+    public function get($class, $params = [])
+    {
+        return $this-&gt;build($class, $params);
+    }
+
+    public function build($class, $params)
+    {
+        $dependencies = [];
+		// 反射 类信息
+        $reflection = new ReflectionClass($class);
+      	// getConstructor 获取类的构造函数
+        $constructor = $reflection-&gt;getConstructor();
+        if ($constructor !== null) {
+          	// 获取构造函数的参数
+            foreach ($constructor-&gt;getParameters() as $param) {
+                $c = $param-&gt;getClass();
+                if ($c !== null) {
+                    $dependencies[] = $this-&gt;get($c-&gt;getName(), $params);
+                }
+            }
+        }
+
+        foreach ($params as $index =&gt; $param) {
+            $dependencies[$index] = $param;
+        }
+		// 从给出的参数创建一个新的类实例
+        return $reflection-&gt;newInstanceArgs($dependencies);
+    }
+}
+</code></pre>
+
+<p>还是 <code>User</code> ，就可以很简单的进行实例化了。</p>
+
+<pre><code class="language-php">$container = new Containerl();
+$user = $container-&gt;get('User);
+print_r($user);
+</code></pre>
+
+<p>输出：</p>
+
+<pre><code class="language-php">User Object
+(
+    [_emailSenderObject:User:private] =&gt; EmailSenderByGmail Object
+        (
+            [_name:EmailSenderByGmail:private] =&gt; 
+        )
+
+)
+</code></pre>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

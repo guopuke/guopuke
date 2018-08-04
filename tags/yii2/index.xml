@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yii2 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/yii2/</link>
+    <description>Recent content in Yii2 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Sep 2017 23:32:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/yii2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yii-事件篇</title>
+      <link>http://guopuke.github.io/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/</link>
+      <pubDate>Thu, 21 Sep 2017 23:32:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/yii-%E4%BA%8B%E4%BB%B6%E7%AF%87/</guid>
+      <description>最近看到一篇 越过长城，走向世界！中国第一封 Email 发出 30 年，感慨这些先驱者们的同时，内心使命感也涌涌而上。之前也没配置过相关邮件服务，遂打算以此文来纪录学习一番。
+那么如何让用户注册账号时触发一个发送邮件的事件呢? 现在很多框架都继承了邮件的功能，遍地的轮子啊！（本篇使用Yii2框架来了解事件如何定义及如何触发并实现发送邮件功能）
+ 配置参数
+ 发送邮件的组件类
+ 通过Ioc容器来传递事件参数
+ 业务中触发发送邮件事件
+  ​
+​
+配置参数 在 common/config/main-local.php 文件中已有 mailer的一个简单配置，添加服务端邮件信息即可，配置如下：
+&#39;mailer&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;yii\swiftmailer\Mailer&#39;, &#39;viewPath&#39; =&amp;gt; &#39;@common/mail&#39;, // false发送邮件，true只是生成邮件在runtime文件夹下，不发邮件 &#39;useFileTransport&#39; =&amp;gt; false, &#39;transport&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;Swift_SmtpTransport&#39;, // 163,gmail等邮箱注意更改 &#39;host&#39; =&amp;gt; &#39;smtp.qq.com&#39;, // 登录用户名 &#39;username&#39; =&amp;gt; &#39;surprisepeas@qq.com&#39;, // 需要注意的是:如果是QQ邮箱,需要去邮箱设置里获取授权码 &#39;password&#39; =&amp;gt; &#39;qnrrfovxvsvmgade&#39;, &#39;port&#39; =&amp;gt; &#39;25&#39;, // 加密算法 &#39;encryption&#39; =&amp;gt; &#39;tls&#39;, ], &#39;messageConfig&#39; =&amp;gt; [ &#39;charset&#39; =&amp;gt; &#39;UTF-8&#39;, // 发送者名称抬头 必须与username配置一致 &#39;from&#39; =&amp;gt; [&#39;surprisepeas@qq.</description>
+    </item>
+    
+    <item>
+      <title>Yii-属性篇</title>
+      <link>http://guopuke.github.io/post/yii-%E5%B1%9E%E6%80%A7%E7%AF%87/</link>
+      <pubDate>Sat, 16 Sep 2017 00:49:52 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/yii-%E5%B1%9E%E6%80%A7%E7%AF%87/</guid>
+      <description>属性用于表征类的状态，从访问的形式上看，属性与成员变量没有区别。
+成员变量是就类的结构构成而言的概念，而属性是就类的功能逻辑而言的概念，两者紧密联系又相互区别。
+成员变量和属性的区别与联系在于：
+ 成员变量是一个“内”概念，反映的是类的结构构成。属性是一个“外”概念，反映的是类的逻辑意义。
+ 成员变量没有读写权限控制，而属性可以指定为只读或只写，或可读可写。
+ 成员变量不对读出作任何后处理，不对写入作任何预处理，而属性则可以。
+ public成员变量可以视为一个可读可写、没有任何预处理或后处理的属性。 而private成员变量由于外部不可见，与属性“外”的特性不相符，所以不能视为属性。
+ 虽然大多数情况下，属性会由某个或某些成员变量来表示，但属性与成员变量没有必然的对应关系， 比如与非门的 output 属性，就没有一个所谓的 $output 成员变量与之对应。
+  Yii通过 yii\base\Object 提供了属性的支持，很多核心基类都继承至它， yii\base\Object 通过PHP的魔术方法 __get() __set() 进行工作。</description>
+    </item>
+    
+    <item>
+      <title>物流信息API对接</title>
+      <link>http://guopuke.github.io/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/</link>
+      <pubDate>Wed, 06 Sep 2017 13:30:59 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/</guid>
+      <description>​ 项目刚好涉及一小块儿订单部分，需要一个第三方的快递物流信息接口API做一个物流轨迹的跟踪。国内的快递100、快递鸟、快递网、聚合数据，国际快递的话使用 Trackingmore也不错。个人综合比较考虑一下，决定使用 快递鸟 物流数据平台。
+注册 不方便的一个地方就是需要手机号收取验证码进行注册， 如果企业注册的话，可能会稍微麻烦一点。
+提交申请后，按照提示填写企业、个人信息就行，会要求上传证件信息（无需等待审核）。
+注册完成以后，到了用户管理界面，会有一个产品服务的选择购买，免费版3000次/天的足够非商城项目来使用了。购买完成后，如下展示的是可用的产品服务。
+物流跟踪 物流追踪API提供物流订单监控服务，用户将订单内容订阅到快递鸟后，快递鸟对订单进行实时监控，当物流轨迹有更新时，实时获取数据，对数据进行格式化，计算运单预计到达时间、全流程的物流状态、当前所在城市等数据后，推送给用户。监控直到订单签收后结束。
+参照 物流跟踪API文档
+Yii2 - Code 因为用的是Yii2框架，根据官方的demo稍作修改，如下：
+ 文件路径 common/config/params-local.php增加以下配置参数  // 快递鸟物流API接口参数 &#39;LOGISTICS&#39; =&amp;gt; [ &#39;EBusinessID&#39; =&amp;gt; &#39;会员中心页 用户ID&#39;, &#39;AppKey&#39; =&amp;gt; &#39;会员中心页 API key&#39;, &#39;ReqURL&#39; =&amp;gt; &#39;http://api.kdniao.cc/api/dist&#39;, // 快递鸟物流跟踪请求地址 //&#39;ReqURL&#39; =&amp;gt; &#39;http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx&#39;, // 即时查询物流信息请求地址 ],   后台填写好订单时，需要实现一个订阅快递鸟物流跟踪的方法，文件路径 backend/controllers/KdniaoController.php  public function actionSubscribe($requestData) { // 调试用,调用此方法时需传递以下3个参数的值 $requestData = [ &#39;OrderCode&#39; =&amp;gt; &#39;123123123123&#39;, // 商户订单号 &#39;ShipperCode&#39; =&amp;gt; &#39;SF&#39;, // 物流渠道商名称 &#39;LogisticCode&#39; =&amp;gt; &#39;123455672341&#39;, // 物流订单号 ]; $requestData = json_encode($requestData); $kdniao_params = Yii::$app-&amp;gt;params[ &#39;LOGISTICS&#39; ]; ksort($kdniao_params, SORT_STRING); list($AppKey, $EBusinessID, $ReqURL) = array_values($kdniao_params); $kdniao = new KdniaoLogistic($AppKey, $EBusinessID, $ReqURL); return $kdniao-&amp;gt;getOrderTracesByJson($requestData); }   SDK文件路径 common/sdk/KdniaoLogistic  &amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>微信小程序支付功能</title>
+      <link>http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Thu, 17 Aug 2017 13:32:14 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</guid>
+      <description>大致流程 实现微信支付主要分为以下两步：
+​ 一、服务端携带参数首先向微信支付服务台生成预支付交易单获得prepay_id等参数并返回给客户端。
+​ 二、前端获得服务端返回的参数后，携带参数并调用小程序内API方法 wx.requestPayment(OBJECT)
+大致流程图：
+配置前提  在小程序管理界面，点击 微信支付 菜单栏进行申请开通相关操作，获取权限及商户ID（已进行微信认证的账号才会显示）。进行申请时需要缴纳费用并会受到一份包含商户信息、证书的邮件（创建、查询订单不需要用到证书，本文不做介绍）。 在 设置 - 开发设置 里获取AppID、小程序密钥   Code Params
+ &#39;open.pay&#39; =&amp;gt; [ // 小程序支付 &#39;lite&#39; =&amp;gt; [ &#39;appid&#39; =&amp;gt; &#39;*************&#39;, // 小程序ID &#39;mch_id&#39; =&amp;gt; &#39;*************&#39;, // 商户ID &#39;key&#39; =&amp;gt; &#39;*************&#39;, // 密钥 &#39;notify_url&#39; =&amp;gt; &#39;*************&#39;, // 回调地址 ], ],  业务代码流程 (Yii2框架)  客户端请求服务端生成订单，服务端请求微信生成统一下单参数返给前端，代码如下：
+ $mch_id = Yii::$app-&amp;gt;params[ &#39;open.pay&#39; ][ &#39;lite&#39; ][ &#39;mch_id&#39; ]; $app_id = Yii::$app-&amp;gt;params[ &#39;open.</description>
+    </item>
+    
+  </channel>
+</rss>

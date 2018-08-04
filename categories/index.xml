@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on My New Hugo Site</title>
+    <link>http://guopuke.github.io/categories/</link>
+    <description>Recent content in Categories on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://guopuke.github.io/categories/about/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bio</title>
+      <link>http://guopuke.github.io/categories/bio/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/bio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://guopuke.github.io/categories/git/</link>
+      <pubDate>Tue, 11 Apr 2017 16:05:09 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://guopuke.github.io/categories/hexo/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:24 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac使用</title>
+      <link>http://guopuke.github.io/categories/mac%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 23 Mar 2017 18:15:18 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/mac%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>http://guopuke.github.io/categories/meta/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>http://guopuke.github.io/categories/php/</link>
+      <pubDate>Fri, 15 Sep 2017 00:31:41 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>http://guopuke.github.io/categories/project/</link>
+      <pubDate>Mon, 05 Oct 2015 02:27:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yii</title>
+      <link>http://guopuke.github.io/categories/yii/</link>
+      <pubDate>Thu, 28 Sep 2017 23:14:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/yii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yii2</title>
+      <link>http://guopuke.github.io/categories/yii2/</link>
+      <pubDate>Thu, 21 Sep 2017 23:32:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/yii2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端技术</title>
+      <link>http://guopuke.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Fri, 16 Jun 2017 07:40:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务器</title>
+      <link>http://guopuke.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Thu, 29 Jun 2017 14:40:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>错误信息</title>
+      <link>http://guopuke.github.io/categories/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Wed, 29 Mar 2017 17:08:46 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>阅读</title>
+      <link>http://guopuke.github.io/categories/%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 18 May 2017 22:47:45 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/categories/%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

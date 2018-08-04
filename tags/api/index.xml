@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/api/</link>
+    <description>Recent content in Api on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Sep 2017 13:30:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>物流信息API对接</title>
+      <link>http://guopuke.github.io/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/</link>
+      <pubDate>Wed, 06 Sep 2017 13:30:59 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AFapi%E5%AF%B9%E6%8E%A5/</guid>
+      <description>​ 项目刚好涉及一小块儿订单部分，需要一个第三方的快递物流信息接口API做一个物流轨迹的跟踪。国内的快递100、快递鸟、快递网、聚合数据，国际快递的话使用 Trackingmore也不错。个人综合比较考虑一下，决定使用 快递鸟 物流数据平台。
+注册 不方便的一个地方就是需要手机号收取验证码进行注册， 如果企业注册的话，可能会稍微麻烦一点。
+提交申请后，按照提示填写企业、个人信息就行，会要求上传证件信息（无需等待审核）。
+注册完成以后，到了用户管理界面，会有一个产品服务的选择购买，免费版3000次/天的足够非商城项目来使用了。购买完成后，如下展示的是可用的产品服务。
+物流跟踪 物流追踪API提供物流订单监控服务，用户将订单内容订阅到快递鸟后，快递鸟对订单进行实时监控，当物流轨迹有更新时，实时获取数据，对数据进行格式化，计算运单预计到达时间、全流程的物流状态、当前所在城市等数据后，推送给用户。监控直到订单签收后结束。
+参照 物流跟踪API文档
+Yii2 - Code 因为用的是Yii2框架，根据官方的demo稍作修改，如下：
+ 文件路径 common/config/params-local.php增加以下配置参数  // 快递鸟物流API接口参数 &#39;LOGISTICS&#39; =&amp;gt; [ &#39;EBusinessID&#39; =&amp;gt; &#39;会员中心页 用户ID&#39;, &#39;AppKey&#39; =&amp;gt; &#39;会员中心页 API key&#39;, &#39;ReqURL&#39; =&amp;gt; &#39;http://api.kdniao.cc/api/dist&#39;, // 快递鸟物流跟踪请求地址 //&#39;ReqURL&#39; =&amp;gt; &#39;http://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx&#39;, // 即时查询物流信息请求地址 ],   后台填写好订单时，需要实现一个订阅快递鸟物流跟踪的方法，文件路径 backend/controllers/KdniaoController.php  public function actionSubscribe($requestData) { // 调试用,调用此方法时需传递以下3个参数的值 $requestData = [ &#39;OrderCode&#39; =&amp;gt; &#39;123123123123&#39;, // 商户订单号 &#39;ShipperCode&#39; =&amp;gt; &#39;SF&#39;, // 物流渠道商名称 &#39;LogisticCode&#39; =&amp;gt; &#39;123455672341&#39;, // 物流订单号 ]; $requestData = json_encode($requestData); $kdniao_params = Yii::$app-&amp;gt;params[ &#39;LOGISTICS&#39; ]; ksort($kdniao_params, SORT_STRING); list($AppKey, $EBusinessID, $ReqURL) = array_values($kdniao_params); $kdniao = new KdniaoLogistic($AppKey, $EBusinessID, $ReqURL); return $kdniao-&amp;gt;getOrderTracesByJson($requestData); }   SDK文件路径 common/sdk/KdniaoLogistic  &amp;lt;?</description>
+    </item>
+    
+  </channel>
+</rss>

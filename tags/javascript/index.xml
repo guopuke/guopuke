@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Jun 2017 07:40:07 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue常用组件库</title>
+      <link>http://guopuke.github.io/post/vue%E7%BB%84%E4%BB%B6%E5%BA%93/</link>
+      <pubDate>Fri, 16 Jun 2017 07:40:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/vue%E7%BB%84%E4%BB%B6%E5%BA%93/</guid>
+      <description>  element （web UI工具套件） iView （ UI 组件库） vue-multiselect（UI组件库） vue-admin （Vue管理面板框架） vue-waterfall（瀑布流布局） vueify（范围化的CSS和组件热重新加载对Vue.js组件进行Browserify变换） vue-threejs （ 用于Three.js和Vue绑定） vue-3d-model （一个展示三维模型的Vue组件） vue-fuse （模糊搜索库） vue-accordion（手风琴菜单组件） vue-js-popover（气泡弹窗） vue-awesome （icons组件） vue-easy-slider（滑块轮播组件） vue-image-lightbox（图片浮层） vue-twentytwenty（图片比较） vue-img-inputer（图片输入框） vue-core-image-upload（图片裁剪，文件上传） vue-lazyload（图片懒加载） vue-pdf（PDF查看） vue-js-modal（模态框） v-tooltip（提示组件） vue-notifications（气泡提示） nprogress（网页进度条） vue-radial-progress（状态进度条） vue-datasource（表格组件） vue-baidu-map（百度地图继承组件） vue-aplayer（音乐播放器） vuejs-sound-player（视频播放器） vuejs-datepicker（轻量日期选择器） vue-datepicker（日期选择器） V - Distpicker（地区选择器） vue-event-calendar（日历） vue-select（下拉选择、标记组件） Vue.Draggable（拖拽组件） vue-qart（二维码动态生成） vue-js-toggle-button（button开关） vue-form-wizard（步骤指引） vue-pull-refresh（移动端下拉刷新） vue-markdown（Markdown编辑器） vue-social-sharing（社交分享） vue-markdown（Markdown编辑器） vue-social-sharing（社交分享）  </description>
+    </item>
+    
+  </channel>
+</rss>

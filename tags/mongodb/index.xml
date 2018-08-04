@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mongodb on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/mongodb/</link>
+    <description>Recent content in Mongodb on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 May 2017 23:22:08 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mongodb 安装使用</title>
+      <link>http://guopuke.github.io/post/mongodb-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 22 May 2017 23:22:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/mongodb-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>Mac 环境
+安装Mongodb brew install mongodb  安装完以后可以看见有很明显的提示:
+brew services start mongodb Or, if you don&#39;t want/need a background service you can just run: mongod --config /usr/local/etc/mongod.conf  为了方便使用, 将其设置为全局变量
+// 在 ~/.bash_profile 添加PATH路径信息 ➜ ~ sudo vi ~/.bash_profile export PATH=&amp;quot;/usr/local/Cellar/mongodb/3.4.3/bin:$PATH&amp;quot;  启动 mongodb sudo mongod --dbpath=/usr/local/var/mongodb  启动成功后末尾会有如下信息
+2017-05-22T23:18:24.487+0800 I FTDC [initandlisten] Initializing full-time diagnostic data capture with directory &#39;/usr/local/var/mongodb/diagnostic.data&#39; 2017-05-22T23:18:24.489+0800 I NETWORK [thread1] waiting for connections on port 27017  说明已经启动成功了， 如果不成功，可能就是数据库路径不正确，仔细看一下提示。启动的时候可定义数据库路径。</description>
+    </item>
+    
+  </channel>
+</rss>

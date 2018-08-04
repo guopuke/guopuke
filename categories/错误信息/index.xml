@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>错误信息 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/categories/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/</link>
+    <description>Recent content in 错误信息 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Mar 2017 17:08:46 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/categories/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac vi 无法编辑~/.base_profile(配置全局变量)</title>
+      <link>http://guopuke.github.io/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Wed, 29 Mar 2017 17:08:46 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/linux-vi-%E6%97%A0%E6%B3%95%E7%BC%96%E8%BE%91-base-profile-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/</guid>
+      <description>vi编辑 .base_profile 文件时,提示如下信息:
+E325: ATTENTION Found a swap file by the name &amp;quot;.bash_profile.swp&amp;quot; owned by: root dated: Tue Nov 10 17:42:38 2017 file name: /etc/proftpd/etc/proftpd.conf modified: no user name: root host name: localhost process ID: 11195 While opening file &amp;quot;.bash_profile&amp;quot; dated: Tue Nov 10 18:32:16 2017 NEWER than swap file! (1) Another program may be editing the same file. If this is the case, be careful not to end up with two different instances of the same file when making changes.</description>
+    </item>
+    
+    <item>
+      <title>configure: error: Cannot find OpenSSL&#39;s &lt;evp.h&gt;</title>
+      <link>http://guopuke.github.io/post/configure-error-cannot-find-openssl-s-evp-h/</link>
+      <pubDate>Wed, 29 Mar 2017 16:49:55 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/configure-error-cannot-find-openssl-s-evp-h/</guid>
+      <description>进行编译安装PHP-mongodb扩展, 执行 ./configure 时提示如下错误信息:
+configure: error: Cannot find OpenSSL&#39;s &amp;lt;evp.h&amp;gt;  因为执行的PHP是MAMP里集成的, 缺少OpenSSL，只有编译安装的PHP才有OpenSSL，偷个懒直接使用brew下载一个PHP。执行 configure 时添加如下参数(换成homebrew下载的php-openssl目录)如下命令：
+./configure --with-openssl-dir=/usr/local/Cellar/openssl/1.0.2k  </description>
+    </item>
+    
+  </channel>
+</rss>

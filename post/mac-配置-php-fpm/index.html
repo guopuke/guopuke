@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Mac 配置 PHP_FPM &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Mac 配置 PHP_FPM</h1>
+  <span class="post-date">Fri, Apr 28, 2017</span>
+  <p>参考: <a href="https://github.com/musicode/test/issues/5">[开发环境]Mac 配置 php-fpm</a></p>
+
+<p>使用 brew 安装好 php 后, 运行<code>php-fpm</code> 时提示我如下错误信息：</p>
+
+<pre><code class="language-Shell">ERROR: failed to open configuration file '/private/etc/php-fpm.conf': No such file or directory (2)
+ERROR: failed to load configuration file '/private/etc/php-fpm.conf'
+ERROR: FPM initialization failed
+</code></pre>
+
+<p>错误信息显示，不能打开配置文件，<code>cd /private/etc</code>，发现没有 <code>php-fpm.conf</code> 文件，但是有 <code>php-fpm.conf.default</code> 文件。这个文件是默认配置，我们可以复制一份，改名为 <code>php-fpm.conf</code>，然后再根据需要改动配置。</p>
+
+<pre><code class="language-Shell">cp /private/etc/php-fpm.conf.default /private/etc/php-fpm.conf
+</code></pre>
+
+<p>执行 <code>php-fpm</code>，再次报错：</p>
+
+<pre><code class="language-Shell">ERROR: failed to open error_log (/usr/var/log/php-fpm.log): No such file or directory (2)
+ERROR: failed to post process the configuration
+ERROR: FPM initialization failed
+</code></pre>
+
+<p>错误信息显示，不能打开错误日志文件。<code>cd /usr/var/log</code> 发现根本没有这个目录，甚至连 <strong>var</strong> 目录都没有，加上为了避免权限问题，干脆配置到 <strong>/usr/local/var/log</strong> 目录。</p>
+
+<p>修改 <strong>php-fpm.conf</strong> <code>error_log</code> 配置为 <code>/usr/local/var/log/php-fpm.log</code>，并把 <code>user</code> 和 <code>group</code> 改为和当前用户一样。</p>
+
+<p>执行 <code>php-fpm</code>，再次报错：</p>
+
+<pre><code>NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+
+</code></pre>
+
+<p>于是 <code>sudo php-fpm</code>，再次报错：</p>
+
+<pre><code>ERROR: unable to bind listening socket for address '127.0.0.1:9000': Address already in use (48)
+ERROR: FPM initialization failed
+</code></pre>
+
+<p>此时意思很明显了, 就是端口被系统自带的 php-fpm 占用了, 执行如下命令,杀死当前所有 php-fpm 进程:</p>
+
+<pre><code class="language-shell">killall php-fpm
+</code></pre>
+
+<p>再运行:</p>
+
+<pre><code class="language-shell">php-fpm -t
+</code></pre>
+
+<p>提示如下信息, 就说明已经启动成功了</p>
+
+<pre><code class="language-shell">NOTICE: configuration file /private/etc/php-fpm.conf test is successful
+</code></pre>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机 on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jun 2018 10:00:02 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Byte bit</title>
+      <link>http://guopuke.github.io/post/byte-bit/</link>
+      <pubDate>Tue, 26 Jun 2018 10:00:02 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/byte-bit/</guid>
+      <description>bit 就是位，也叫比特位，是计算机表示数据最小的单位
+byte 就是字节
+1个字符 = 2 字节
+1KB = 1024B
+「字节」就是 Byte，也就是 B
+「位」就是 bit 也是 b
+转换关系如下：1KB = 1024B
+1B= 8b</description>
+    </item>
+    
+  </channel>
+</rss>

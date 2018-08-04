@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>微信小程序发送模板消息 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>微信小程序发送模板消息</h1>
+  <span class="post-date">Wed, Mar 14, 2018</span>
+  
+
+<h3 id="前提要求">前提要求</h3>
+
+<ul>
+<li>建议首先了解下<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/notice.html">官方文档</a></li>
+<li>已添加模板库(模板ID)</li>
+<li>已获取用户的 <code>open_id</code>, <code>formId</code> || <code>prepay_id</code></li>
+</ul>
+
+<h5 id="添加模板库">添加模板库</h5>
+
+<ul>
+<li>通过模版消息管理接口获取模版ID</li>
+<li>在微信公众平台手动配置获取模版ID(如下图)，此处手动获取的时候会遇到一个坑，建议使用上面的<strong>模版消息管理接口</strong>获取，当时开发时在详情里复制的模板ID其实是被HTML页面元素截断了，导致调试了很久(右键查看元素手动复制也是个办法)。</li>
+</ul>
+
+<p><img src="http://omixc2ggv.bkt.clouddn.com/Xnip2018-03-73_14-19-02.jpg" alt="添加模板消息" /></p>
+
+<h5 id="获取formid">获取formId</h5>
+
+<p>在小程序页面 <code>&lt;form/&gt;</code> 组件，属性report-submit为true时，可以声明为需发模板消息，此时点击按钮提交表单可以获取 <code>formId</code>，用于发送模板消息，此处只有在真机调试的时候提交才会有，使用开发工具的时候不会产生 <code>formId</code>，会得到提示 <code>the formId is a mock one</code>。或者当用户完成支付行为，可以获取<code>prepay_id</code> 用于发送模板消息。</p>
+
+<p><em>小程序代码</em></p>
+
+<blockquote>
+<p>xx.wxml</p>
+</blockquote>
+
+<pre><code class="language-js"> &lt;form bindsubmit=&quot;formSubmit&quot; report-submit='true'&gt;
+  &lt;view class=&quot;btn-area&quot;&gt;
+    &lt;button formType=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+  &lt;/view&gt;
+&lt;/form&gt;
+</code></pre>
+
+<blockquote>
+<p>xx.js</p>
+</blockquote>
+
+<pre><code class="language-js">formSubmit: function (e) {
+    console.log(e.detail.formId)
+    // Your show~
+}
+</code></pre>
+
+<h5 id="调用微信发送模板消息接口">调用微信发送模板消息接口</h5>
+
+<p><code>POST</code> 请求下面的地址</p>
+
+<pre><code>https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=ACCESS_TOKEN
+</code></pre>
+
+<pre><code class="language-js">{
+  // 用户的OPENID
+  &quot;touser&quot;: &quot;OPENID&quot;,  
+  // 模板ID
+  &quot;template_id&quot;: &quot;TEMPLATE_ID&quot;, 
+  // 链接跳转地址(小程序路由)
+  &quot;page&quot;: &quot;page/index&quot;,          
+  // 调教表单生成 formId
+  &quot;form_id&quot;: &quot;FORMID&quot;, 
+  // 模板消息内容        
+  &quot;data&quot;: {
+  		// 键名对应下图的关键词
+      &quot;keyword1&quot;: {
+      		// 内容
+          &quot;value&quot;: &quot;智能XXX&quot;, 
+          // 字体颜色
+          &quot;color&quot;: &quot;#173177&quot;
+      }, 
+      &quot;keyword2&quot;: {
+          &quot;value&quot;: &quot;2015年01月05日 12:30&quot;, 
+          &quot;color&quot;: &quot;#173177&quot;
+      }
+  }
+}
+</code></pre>
+
+<p><img src="http://omixc2ggv.bkt.clouddn.com/Xnip2018-03-73_15-08-55.jpg" alt="" /></p>
+
+<p><em>如果项目是使用PHP开发的项目，且很多功能依赖微信开发，建议使用overtrue大神开发的<a href="https://www.easywechat.com/">EasyWeChat</a></em></p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

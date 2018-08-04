@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Sep 2017 13:30:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Api</title>
+      <link>http://guopuke.github.io/tags/api/</link>
+      <pubDate>Wed, 06 Sep 2017 13:30:59 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Base_profile</title>
+      <link>http://guopuke.github.io/tags/base_profile/</link>
+      <pubDate>Wed, 29 Mar 2017 17:08:46 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/base_profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bio</title>
+      <link>http://guopuke.github.io/tags/bio/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/bio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://guopuke.github.io/tags/blog/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:24 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chrome</title>
+      <link>http://guopuke.github.io/tags/chrome/</link>
+      <pubDate>Thu, 24 Aug 2017 21:26:55 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://guopuke.github.io/tags/git/</link>
+      <pubDate>Tue, 11 Apr 2017 16:05:09 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>http://guopuke.github.io/tags/github/</link>
+      <pubDate>Thu, 23 Mar 2017 22:40:31 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>http://guopuke.github.io/tags/hexo/</link>
+      <pubDate>Fri, 24 Mar 2017 09:42:18 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://guopuke.github.io/tags/javascript/</link>
+      <pubDate>Fri, 16 Jun 2017 07:40:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel</title>
+      <link>http://guopuke.github.io/tags/laravel/</link>
+      <pubDate>Fri, 14 Jul 2017 14:56:37 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://guopuke.github.io/tags/mac/</link>
+      <pubDate>Fri, 28 Apr 2017 13:18:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mamp</title>
+      <link>http://guopuke.github.io/tags/mamp/</link>
+      <pubDate>Tue, 11 Apr 2017 14:41:42 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/mamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>http://guopuke.github.io/tags/meta/</link>
+      <pubDate>Mon, 05 Oct 2015 02:27:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mongodb</title>
+      <link>http://guopuke.github.io/tags/mongodb/</link>
+      <pubDate>Mon, 22 May 2017 23:22:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>http://guopuke.github.io/tags/mysql/</link>
+      <pubDate>Wed, 22 Nov 2017 17:06:39 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://guopuke.github.io/tags/nginx/</link>
+      <pubDate>Wed, 19 Apr 2017 09:32:37 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>http://guopuke.github.io/tags/php/</link>
+      <pubDate>Fri, 15 Sep 2017 00:31:41 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php_fpm</title>
+      <link>http://guopuke.github.io/tags/php_fpm/</link>
+      <pubDate>Fri, 28 Apr 2017 13:18:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/php_fpm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>http://guopuke.github.io/tags/project/</link>
+      <pubDate>Mon, 05 Oct 2015 02:27:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>http://guopuke.github.io/tags/redis/</link>
+      <pubDate>Fri, 06 Oct 2017 14:53:35 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://guopuke.github.io/tags/ssh/</link>
+      <pubDate>Thu, 23 Mar 2017 22:40:31 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swoole</title>
+      <link>http://guopuke.github.io/tags/swoole/</link>
+      <pubDate>Mon, 22 May 2017 23:54:53 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/swoole/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://guopuke.github.io/tags/vue/</link>
+      <pubDate>Fri, 16 Jun 2017 07:40:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webpack</title>
+      <link>http://guopuke.github.io/tags/webpack/</link>
+      <pubDate>Sat, 03 Jun 2017 22:25:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/webpack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yii</title>
+      <link>http://guopuke.github.io/tags/yii/</link>
+      <pubDate>Thu, 28 Sep 2017 23:14:08 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/yii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yii2</title>
+      <link>http://guopuke.github.io/tags/yii2/</link>
+      <pubDate>Thu, 21 Sep 2017 23:32:23 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/yii2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端</title>
+      <link>http://guopuke.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Fri, 16 Jun 2017 07:40:07 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>反向代理</title>
+      <link>http://guopuke.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 21 May 2017 13:23:38 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>小程序</title>
+      <link>http://guopuke.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 14 Mar 2018 14:04:00 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>并发</title>
+      <link>http://guopuke.github.io/tags/%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Fri, 06 Oct 2017 14:53:35 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E5%B9%B6%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>正向代理</title>
+      <link>http://guopuke.github.io/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 21 May 2017 13:23:38 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>终端</title>
+      <link>http://guopuke.github.io/tags/%E7%BB%88%E7%AB%AF/</link>
+      <pubDate>Tue, 11 Apr 2017 16:05:09 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E7%BB%88%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机</title>
+      <link>http://guopuke.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+      <pubDate>Tue, 26 Jun 2018 10:00:02 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>透明代理</title>
+      <link>http://guopuke.github.io/tags/%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 21 May 2017 13:23:38 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>阅读</title>
+      <link>http://guopuke.github.io/tags/%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 18 May 2017 22:47:45 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>阮一峰</title>
+      <link>http://guopuke.github.io/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/</link>
+      <pubDate>Thu, 18 May 2017 22:47:45 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E9%98%AE%E4%B8%80%E5%B3%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试题</title>
+      <link>http://guopuke.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Sun, 21 May 2017 10:32:37 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/chrome/</link>
+    <description>Recent content in Chrome on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Aug 2017 21:26:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chrome cVim 快捷键速查表</title>
+      <link>http://guopuke.github.io/post/chrome-cvim-%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%80%9F%E6%9F%A5%E8%A1%A8/</link>
+      <pubDate>Thu, 24 Aug 2017 21:26:55 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/chrome-cvim-%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%80%9F%E6%9F%A5%E8%A1%A8/</guid>
+      <description>最近在各大论坛有意多关注了些Chrome推荐的插件，看见一款新玩意推荐 cVim 说比Vimium还要强大，自带快捷键不说还集成了搜索、查找、viusal 模式、像素级平滑滚动、自定义键映射、更顺手标签页快捷键。
+GitHub地址 https://github.com/1995eaton/chromium-vim
+Chrome Extension https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh
+根据官方的介绍，它和Vimium、ViChrome有几个明显的特征优势：
+ 支持自定义搜索引擎 正则表达式 支持 Visual Mode 命令支持tab补全 自定义键映射  键映射    页面滚动  Mapping name     j, s 向下滚动 scrollDown   k, w 向上滑动 scrollUp   h 向左滚动 scrollLeft   l 向右滚动 scrollRight   d 滚动一半页面 scrollPageDown   unmapped 滚动全页下来 scrollFullPageDown   u, e 滚动一半页面 scrollPageUp   unmapped 滚动全页面 scrollFullPageUp   gg 滚动到页面顶部 scrollToTop   G 滚动到页面的底部 scrollToBottom   0 滚动到页面的左边 scrollToLeft   $ 滚动到页面的右侧 scrollToRight   # 将滚动焦点重置为主页面 resetScrollFocus   gi 转到第一个输入框 goToInput   gI 转到最后一个聚焦的输入框 gi goToLastInput   zz 中心页到当前搜索匹配（中） centerMatchH   zt 中心页到当前搜索匹配（上） centerMatchT   zb 中心页面到当前搜索匹配（底部） centerMatchB   连接提示     f 打开当前页面中的链接 createHint   F 在新标签页中打开链接 createTabbedHint   unmapped 在新标签页中打开链接（活动） createActiveTabbedHint   W 在新窗口中打开链接 createHintWindow   A 重复最后提示命令 openLastHint   q 触发悬停事件 createHoverHint   Q 触发不起眼的事件 createUnhoverHint   mf 打开多个链接 createMultiHint   unmapped 使用外部编辑器编辑文本 createEditHint   unmapped 调用带有链接的代码块作为第一个参数 createScriptHint(&amp;lt;FUNCTION_NAME&amp;gt;)   unmapped 在新标签页中打开图像 fullImageHint   mr 反向图像搜索多个链接 multiReverseImage   my 打开多个链接（打开链接P列表） multiYankUrl   gy 从链接复制URL到剪贴板 yankUrl   gr 反向图像搜索（谷歌图像） reverseImage   ; 改变链接提示的重点    快速标记马克     M&amp;lt;*&amp;gt; 创建quickmark &amp;lt;*&amp;gt; addQuickMark   go&amp;lt;*&amp;gt; 在当前标签中打开quickmark &amp;lt;*&amp;gt; openQuickMark   gn&amp;lt;*&amp;gt; 在新标签页中打开quickmark &amp;lt;*&amp;gt; openQuickMarkTabbed   gw&amp;lt;*&amp;gt; 在新窗口中打开quickmark &amp;lt;*&amp;gt; openQuickMarkWindowed   杂项     a 简写别名 &amp;ldquo;:tabnew google &amp;ldquo; (以google搜索打开新页面) :tabnew google   .</description>
+    </item>
+    
+  </channel>
+</rss>

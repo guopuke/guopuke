@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mamp on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/mamp/</link>
+    <description>Recent content in Mamp on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Apr 2017 14:41:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/mamp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MAMP 环境安装 PHP 扩展</title>
+      <link>http://guopuke.github.io/post/mamp-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85-php-%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Tue, 11 Apr 2017 14:41:42 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/mamp-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85-php-%E6%89%A9%E5%B1%95/</guid>
+      <description>最近在研究Workerman (一个 PHP socket 服务器框架) ，需要使用到PCNTL扩展（支持 PHP 多线程操作），但因为自己一直使用的是 MMAP 集成环境，安装PHP 扩展总是会发生一些很迷的事情（填前段时间安装 Swoole 的坑。。），所以打算这次解决了它！
+替换 Mac 自带 PHP 打开配置环境变量文件：
+ vi ~/.bash_profile
+ 在全局变量里添加MAMP 的 PHP 路径：
+export MAMP_PHP=/Applications/MAMP/bin/php/php7.1.1/bin export PATH=&amp;quot;$MAMP_PHP:$PATH&amp;quot;  查看 PHP 版本是否为 MAMP 当前使用的版本(使用的7.1版本):
+ php -v
+ PHP 7.1.1 (cli) (built: Jan 23 2017 15:09:57) ( NTS ) Copyright (c) 1997-2017 The PHP Group Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies  初始化 MAMP 的 PHP 因为 MAMP 自带的 PHP 没有包含源码，在 PHP源码下载 你当前使用的 MAMP 使用 PHP 版本，下载完成后解压：</description>
+    </item>
+    
+  </channel>
+</rss>

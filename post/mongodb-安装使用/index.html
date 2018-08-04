@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Mongodb 安装使用 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>Mongodb 安装使用</h1>
+  <span class="post-date">Mon, May 22, 2017</span>
+  
+
+<p><em>Mac 环境</em></p>
+
+<h4 id="安装mongodb">安装Mongodb</h4>
+
+<pre><code class="language-javascript">brew install mongodb
+</code></pre>
+
+<p>安装完以后可以看见有很明显的提示:</p>
+
+<pre><code class="language-javascript">brew services start mongodb
+Or, if you don't want/need a background service you can just run:
+  mongod --config /usr/local/etc/mongod.conf
+</code></pre>
+
+<p>为了方便使用, 将其设置为全局变量</p>
+
+<pre><code class="language-javascript">// 在 ~/.bash_profile 添加PATH路径信息
+➜  ~ sudo vi ~/.bash_profile
+
+export PATH=&quot;/usr/local/Cellar/mongodb/3.4.3/bin:$PATH&quot;
+</code></pre>
+
+<h4 id="启动-mongodb">启动 mongodb</h4>
+
+<pre><code class="language-javascript">sudo mongod --dbpath=/usr/local/var/mongodb
+</code></pre>
+
+<p>启动成功后末尾会有如下信息</p>
+
+<pre><code class="language-javascript">2017-05-22T23:18:24.487+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/usr/local/var/mongodb/diagnostic.data'
+2017-05-22T23:18:24.489+0800 I NETWORK  [thread1] waiting for connections on port 27017
+</code></pre>
+
+<p>说明已经启动成功了， 如果不成功，可能就是数据库路径不正确，仔细看一下提示。启动的时候可定义数据库路径。</p>
+
+<p>shell 窗口不要关闭，让其先一直启动连接着，再开一个 shell窗口，输入 <code>mongo</code> 就可以进入管理台管理 mongodb 数据库了;</p>
+
+<pre><code class="language-javascript">➜  ~ mongo
+MongoDB shell version v3.4.3
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.3
+Welcome to the MongoDB shell.
+For interactive help, type &quot;help&quot;.
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+Server has startup warnings:
+2017-05-22T23:18:24.477+0800 I CONTROL  [initandlisten]
+2017-05-22T23:18:24.478+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-05-22T23:18:24.478+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-05-22T23:18:24.478+0800 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-05-22T23:18:24.478+0800 I CONTROL  [initandlisten]
+&gt; db
+test
+</code></pre>
+
+<p>使用数据库，有就直接进入，没有会自动创建</p>
+
+<pre><code>use databasename
+</code></pre>
+
+<p>创建数据表</p>
+
+<pre><code class="language-JavaScript">db.createCollection(&quot;Account&quot;)
+</code></pre>
+
+<p>ok.. have fun ~</p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

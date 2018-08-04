@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/blog/</link>
+    <description>Recent content in Blog on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Mar 2017 21:00:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用GitHub写Blog</title>
+      <link>http://guopuke.github.io/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:24 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/%E4%BD%BF%E7%94%A8github%E5%86%99blog/</guid>
+      <description>创建GitHub Pages  新建一个GitHub的仓库, 仓库名称必须设置为$username.github.io (比如我的GitHub用户名为SurprisePeas, Repository填写SurprisePeas.github.io)  环境准备( 安装 Node.js Git ) 安装Git Node
+brew install git brew install node   查看已安装的开源软件包、安装位置
+ brew list brew list node  安装配置Hexo 搭建博客的核心
+感兴趣想深入了解Hexo的同学可以查看Hexo官网解锁更多玩法。
+ 安装Hexo
+ npm install hexo-cli -g   安装好hexo以后，在终端输入：hexo , 若出现下图，说明安装成功:
+  初始化创建博客(blog)
+ // 进入目录 cd &amp;lt;path&amp;gt; // 执行init初始化并创建blog项目文件 hexo init &amp;lt;blog&amp;gt; // 进入demo博客目录 cd blog // 根据dependencies配置安装所有的依赖包 npm install   初始化后的目录结构如图:  配置Blog项目</description>
+    </item>
+    
+  </channel>
+</rss>

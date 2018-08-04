@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on My New Hugo Site</title>
+    <link>http://guopuke.github.io/tags/git/</link>
+    <description>Recent content in Git on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Apr 2017 16:05:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://guopuke.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 常用命令整理</title>
+      <link>http://guopuke.github.io/post/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</link>
+      <pubDate>Tue, 11 Apr 2017 16:05:09 +0000</pubDate>
+      
+      <guid>http://guopuke.github.io/post/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
+      <description>git config 配置文件的三种级别  # 版本库级别: git config -e # 全局(用户主目录下): git config -e --global # 系统级: git config -e --system   添加修改配置文件参数  git config a.b something   不删除工作目录文件，仅删除暂存区的文件  git rm --cached cached.txt   跳过使用暂存区域直接提交  git commit -a -m &amp;quot;不使用git add 直接提交&amp;quot;   查找当前工作区的Git版本库位置  $ pwd /Applications/www/My blog/source $ git rev-parse --git-dir /Applications/www/My blog/.git   显示工作区根目录  git rev-parse -- /Applications/www/My blog   显示工作区根目录的相对目录  $ cd source/_posts git rev-parse --show-prefix source/_posts/   重新修改最新的提交, 改正作者和提交者的错误信息  $ git commit --amend --allow-empty --reset-author ## 参数说明: # --amend 对刚刚的提交进行修补,不产生新的提交 # --allow-empty 使空白提交被允许 # --reset-author 将Author提交者的ID同步修改,重置AuthorDate信息   精简查看日志  git log --pretty=oneline   精简格式的状态  git status -s   比较差异  # 工作区与提交暂存区(stage)对比: git diff # 工作区与HEAD(当前工作分支)对比: git diff HEAD # 提交暂存区与版本库文件比较: git diff --cached # 比较里程碑 A 和里程碑 B git diff A B # 比较工作区和里程碑 A git diff A   逐词比较  git diff --word-diff   文件追溯，找出谁修改过文件，由谁引入  git blame README # 只查看第2行后面的3行 git blame -L 2,+3 README   显示暂存区的目录树  git ls-file -s   通过Git日志重置master  $ git reflog show master| head -5 9cb12d3 master@{0}: reset: moving to 9cb12d3 f1fbdca master@{1}: reset: moving to HEAD^ cba158e master@{2}: commit: does master follow this new commit?</description>
+    </item>
+    
+  </channel>
+</rss>

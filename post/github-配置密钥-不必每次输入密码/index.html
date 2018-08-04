@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>GitHub 配置秘钥SSH &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>GitHub 配置秘钥SSH</h1>
+  <span class="post-date">Thu, Mar 23, 2017</span>
+  
+
+<h5 id="1-查看电脑是否已经有-shh-key">1、查看电脑是否已经有 SHH key</h5>
+
+<p>终端输入:</p>
+
+<pre><code>➜  cd ~/.ssh
+➜  ls
+id_rsa      id_rsa.pub  known_hosts
+</code></pre>
+
+<p>如果有 <strong>id_rsa.pub</strong> 或者 <strong>id_dsa.pub</strong> 任一文件, 那么就不需要再生成SSH key, 直接进行第3步就行。</p>
+
+<h5 id="2-创建-ssh-key">2、创建 SSH key</h5>
+
+<pre><code class="language-shell">ssh-keygen -t rsa -C &quot;your_email@mail.com&quot;
+</code></pre>
+
+<p>代码参数:</p>
+
+<p>-t 密钥类型, 默认rsa</p>
+
+<p>-C 注释</p>
+
+<p>-f 指定密钥文件存储的文件名,不加此参数运行后仍然会让你输入一个文件名,按下enter键使用默认文件名就行。</p>
+
+<p>会提示你输入两次密码(此密码是push文件时输入的密码,不是GitHub的登录密码),也可以直接enter。接下来会将SSH key提示给你：</p>
+
+<pre><code># The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+</code></pre>
+
+<h5 id="3-登录github在个人中心打开-ssh-and-gpg-keys-页面点击-new-ssh-key-按钮将-ssh-key-粘贴到页面key区域内">3、登录GitHub在个人中心打开 <strong>SSH and GPG keys</strong> 页面点击 <strong>New SSH key</strong> 按钮将 SSH key 粘贴到页面Key区域内</h5>
+
+<p><img src="http://omixc2ggv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-03-23%2022.08.33.png" alt="" /></p>
+
+<h5 id="4-查看是否已正常使用ssh">4、查看是否已正常使用SSH</h5>
+
+<p>终端输入:</p>
+
+<pre><code class="language-shell">➜  .ssh ssh -T git@github.com
+</code></pre>
+
+<p>enter回车后,会见到字段,就表示已经成功了:</p>
+
+<pre><code>Hi SurprisePeas! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>

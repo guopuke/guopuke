@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.45.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>MacOS 配置iTerm2 &#43; Oh My Zsh主题 &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://guopuke.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://guopuke.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://guopuke.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>MacOS 配置iTerm2 &#43; Oh My Zsh主题</h1>
+  <span class="post-date">Thu, Mar 16, 2017</span>
+  <p>😏 想让你的终端也变成这样？Come On！跟着我左手右手一个慢动作&hellip;
+<img src="https://cloud.githubusercontent.com/assets/1415488/13198621/f2c1320c-d848-11e5-8f22-7fac1baeec2f.jpg" alt="" /></p>
+
+<p>☝️ 1. Download - iTerm2</p>
+
+<p>iTerm2官网下载地址</p>
+
+<p>☝️ 2. Install oh-my-zsh now</p>
+
+<p>🙄 Your terminal never felt this good before!</p>
+
+<p>🙄 就像 Oh My Zsh 的主页上面说的：“当你用了这些非常酷的命令行工具后，人们来到你的电脑前，一定会对你的命令行大加称赞。迎来一片点赞。”</p>
+
+<p>还有酱紫简单点带可爱风的小图标呢!
+<img src="https://cloud.githubusercontent.com/assets/2618447/6316752/51e211a6-ba00-11e4-8f57-e82fcc4a453f.png" alt="" /></p>
+
+<p>使用curl下载：</p>
+
+<pre><code>curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+</code></pre>
+
+<p>安装完成后，显示如下:</p>
+
+<pre><code>Cloning Oh My Zsh...
+Cloning into '/Users/icafe/.oh-my-zsh'...
+remote: Counting objects: 712, done.
+remote: Compressing objects: 100% (584/584), done.
+remote: Total 712 (delta 15), reused 522 (delta 4), pack-reused 0
+Receiving objects: 100% (712/712), 443.58 KiB | 27.00 KiB/s, done.
+Resolving deltas: 100% (15/15), done.
+Checking connectivity... done.
+Looking for an existing zsh config...
+Using the Oh My Zsh template file and adding it to ~/.zshrc
+Copying your current PATH and adding it to the end of ~/.zshrc for you.
+Time to change your default shell to zsh!
+        __                                     __
+ ____  / /_     ____ ___  __  __   ____  _____/ /_
+/ __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
+/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
+\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
+                       /____/                       ....is now installed!
+Please look over the ~/.zshrc file to select plugins, themes, and options.
+p.s. Follow us at https://twitter.com/ohmyzsh.
+p.p.s. Get stickers and t-shirts at http://shop.planetargon.com.
+</code></pre>
+
+<p>☝️ 3.设置主题</p>
+
+<p>编辑配置文件:</p>
+
+<pre><code>vi ~/.zshrc
+</code></pre>
+
+<p>修改 ZSH_THEME 为自己喜欢的主题名称:</p>
+
+<pre><code>ZSH_THEME=&quot;robbyrussell&quot;
+</code></pre>
+
+<p>☝️ 4.快捷选择目录和文件</p>
+
+<p>推推眼镜 😎 虽然主题很酷，但是真正酷的地方在于它的快捷选择目录和文件的特点上。</p>
+
+<p>Mac在使用普通的终端命令行时，常用的cd 命令在众多目录中切换，首先得输入这个目录下的目录前缀，按table键进行自动补全，但是这个补全功能是严格匹配大小写的。</p>
+
+<p>Oh My Zsh为我们提供了更人性化的使用体验，cd一下接着table table…. 就可以查看此目录下的所有文件了：</p>
+
+<pre><code>cd /Applications/Calculator.app
+Alfred\ 3.app/                Dashboard.app/                MWeb.app/                     Pages.app/                    Sketch.app/                   WeChat.app/
+Android\ File\ Transfer.app/  Dictionary.app/               Mail.app/                     Photo\ Booth.app/             Steam.app/                    WebStorm.app/
+App\ Store.app/               FaceTime.app/                 Maipo.app/                    Photos.app/                   Stickies.app/                 iBooks.app/
+</code></pre>
+
+<p>☝️ 5.强化命令行自动提示补全功能</p>
+
+<p>安装:</p>
+
+<pre><code>git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+</code></pre>
+
+<p>打开 <code>zshrc</code> 添加配置信息:</p>
+
+<pre><code>vi ~/.zshrc
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+</code></pre>
+
+<p>😯 over..</p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>
